@@ -1,0 +1,43 @@
+.fillTheGap {
+    font-family: $fontFamilyCardButton;
+    font-size: $fontSizeS;
+    color: $colorGreenBottle;
+    margin: 25px 20px 30px;
+}
+
+.fillTheGap-item {
+    text-align: left;
+}
+
+.fillTheGap-label{
+   margin-bottom: 6px;
+   width: 100%;
+}
+
+.fillTheGap-input{
+    border: solid 1px $colorLimePastel;
+    display: block;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100%;
+    &::placeholder{
+        color: $colorgGraySilver; 
+    }
+}
+
+.profile-miniature{
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.input-file{
+    display:none;
+}
+
+.profilePicture-align{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
