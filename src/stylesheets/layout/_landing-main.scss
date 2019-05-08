@@ -1,0 +1,85 @@
+.landing__container{
+    @include flex(flex, column, center, center);
+    min-width: 320px;
+    height: 100%;
+    padding: 95px 26px 30px;
+    background-color: $colorBeige;
+
+    @media all and (min-width:768px){
+        padding: 174px 26.4px 30px 25.6px;
+    }
+}
+
+.landing__hero{
+    width: 250px;
+    padding-bottom: 35.4px;
+
+    @media all and (min-width:768px){
+        width: 419px;
+        padding-bottom: 31px;
+    }
+}
+
+.landing__title{
+    @include textParameter($colorOrangeCitrus, $fontFamilyTitle, $fontSizeXL, $fontWeightL);
+
+    @media all and (min-width:768px){
+        font-size: $fontSizeXXL;
+    }
+}
+
+.landing__subtitle{
+    @include textParameter($colorGreenBottle, inherit, $fontSizeXS, inherit);
+    max-width: 268px;
+    @media all and (min-width:768px) {
+        max-width: 309px;
+        font-size: $fontSizeM;
+        margin-bottom: 25px;
+    }
+}
+
+.landing__list{
+    @include flex(flex, row, space-evenly, none);
+    @include boxParameter(16.8px 0 0 0, 15px 20px 19.8px 20px);
+    width: 268px;
+    border: 1.6px solid rgba(225, 115, 52, 0.21);
+
+    @media all and (min-width:768px){
+        width: 325px;
+        padding: 15px 5px 24px;
+
+    }
+}
+
+.item__list{
+    @include textParameter($colorGraySlate, inherit, $fontSizeXS, inherit);
+
+    @media all and (min-width:768px){
+        padding: 0 15px;
+        font-size: $fontSizeM;
+    }
+}
+
+.icon{
+    display: block;
+    margin: 0;
+    font-size: $fontSizeXXL;
+    color: $colorOrangeCitrus;
+    @media all and (min-width:768px){
+        font-size: 28px;
+    }
+}
+
+.landing__link{
+    @include textParameter($colorSimplyWhite, inherit, inherit, $fontWeightS);
+    @include boxParameter(38.6px 0 0 0, 10px 0 10px 0);
+    width: 129px;
+    background-color: $colorGreenyBlue;
+    text-transform: uppercase;
+    border-radius: 21px;
+    @media all and (min-width:768px) {
+        margin-top:186px;
+        margin-bottom: 29px;
+    }
+
+}

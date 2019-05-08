@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.scss';
 import MainPreview from './components/MainPreview';
+import './stylesheets/App.scss';
 
 function App() {
 	return (
