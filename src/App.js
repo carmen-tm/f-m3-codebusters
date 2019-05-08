@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import MainForm from './component/main-form';
+
+import MainForm from './components/main-form';
+import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 
 
 function App() {
   return (
     <div className="App">
-     <MainForm />
+      <MainPage />
     </div>
   );
 }
-
 export default App;
