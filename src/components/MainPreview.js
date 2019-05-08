@@ -3,7 +3,7 @@ import React from 'react';
 class MainPreview extends React.Component {
 	render() {
 		return (
-			<section classNameName="main-preview__container">
+			<section className="main-preview__container">
 				<button className="reset__btn">
 					<i className="far fa-trash-alt reset__icon" />
 					Reset
