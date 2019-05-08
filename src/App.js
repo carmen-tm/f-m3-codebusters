@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.scss';
 import MainPage from './components/MainPage.js';
+import './stylesheets/App.scss';
 
 function App() {
   return (
@@ -9,5 +9,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

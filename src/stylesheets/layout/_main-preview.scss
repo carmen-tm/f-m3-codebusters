@@ -1,0 +1,160 @@
+.main-preview__container {
+	@include boxSize(100%, 457px);
+	// @include boxSize(100%, 100%);
+	@include gridContainer(
+		grid,
+		1fr,
+		1fr 1fr 1fr 1fr,
+		'resetBtn' 'userInfo' 'picture' 'socialMedia'
+	);
+	position: relative;
+	background: $colorFromGrayToGhostwhite;
+	padding: 38px 35px 40px 45px;
+
+	@media all and (min-width: 768px) {
+		@include boxParameter(0 0 0 30px, 173px 44px 260px 45px);
+		max-width: 329px;
+		min-height: 812px;
+		border-radius: 6px;
+	}
+	@media all and (min-width: 1024px) {
+		@include boxParameter(0 0 0 0px, 173px 140px 260px 180px);
+		max-width: 585px;
+		min-height: 812px;
+		border-radius: 6px;
+	}
+}
+
+.reset__btn {
+	@include textParameter(
+		$colorGraySlate,
+		$fontFamilyCardButton,
+		$fontSizeXXS,
+		none
+	);
+	@include boxSize(75px, 30px);
+	grid-area: resetBtn;
+	border: 1px solid $colorBeige;
+	border-radius: 15px;
+	background-color: transparent;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.reset__icon {
+	margin-right: 10px;
+}
+
+// COLORS PALETTES
+.red-palette {
+	color: $colorRedDriedBlood;
+	// .card-user{
+	//     border-left:5px solid #e95626;
+	// }
+	.card__item-list {
+		border-color: $colorOrangeBlood;
+	}
+}
+.gray-palette {
+	color: $colorGraySwamp;
+	// .card-user{
+	//     border-left:5px solid #a0c0cf;
+	// }
+	.card__item-list {
+		border-color: $colorSmokeBlue;
+	}
+}
+.green-palette {
+	color: $colorGreenBottle;
+	// .card-user{
+	//     border-left:5px solid #a2deaf;
+	// }
+	.card__item-list {
+		border-color: $colorLimePastel;
+	}
+}
+
+//DIV BORDER
+.borderLeftRed {
+	border-left: 5px solid $colorOrangeBlood;
+}
+.borderLeftGreen {
+	border-left: 5px solid $colorLimePastel;
+}
+.borderLeftGray {
+	border-left: 5px solid $colorSmokeBlue;
+}
+
+.card__container {
+	@include boxSize(240px, auto);
+	@include flex(inherit, column, none, none);
+	background-color: $colorBeige;
+	box-shadow: $colorBoxShadow;
+	text-align: start;
+}
+
+.card-user__container {
+	@include boxSize(240px, 42px);
+	grid-area: userInfo;
+	padding-top: 23px;
+	height: 75px;
+
+	.card-user {
+		//border-left: 5px solid $colorLimePastel;
+		box-shadow: none;
+
+		.card-user__name {
+			@include textParameter(inherit, $fontFamilyCard, $fontSizeL, bold);
+			margin: 0 0 4px 15px;
+		}
+
+		.card-user__job {
+			@include textParameter(
+				$colorGraySlate,
+				$fontFamilyCard,
+				$fontSizeM,
+				normal
+			);
+			margin: 0 0 10px 15px;
+		}
+	}
+}
+
+.card__picture {
+	@include boxSize(240px, 200px);
+	display: inline-flex;
+	grid-area: picture;
+	box-shadow: $colorBoxShadow;
+	background-size: cover;
+	background-position: center;
+	background-image: url('../images/darth-vader.jpg');
+}
+
+.card__social-media-list {
+	@include flex(flex, flex-start, center, center);
+	grid-area: socialMedia;
+	position: absolute;
+	bottom: 12px;
+	margin-left: 20px;
+}
+
+.card__item-list {
+	@include flex(flex, none, center, center);
+	@include boxSize(32px, 32px);
+	font-size: $fontSizeL;
+	border: 2px solid $colorLimePastel;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.card__item-list-no-border {
+	@include flex(flex, none, center, center);
+	@include boxSize(32px, 32px);
+	font-size: $fontSizeL;
+	border: 0px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.card__link {
+	color: inherit;
+}
