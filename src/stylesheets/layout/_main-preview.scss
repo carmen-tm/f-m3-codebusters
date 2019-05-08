@@ -120,14 +120,14 @@
 	}
 }
 
-.card__picture {
-	@include boxSize(240px, 200px);
-	display: inline-flex;
-	grid-area: picture;
-	box-shadow: $colorBoxShadow;
-	background-size: cover;
-	background-position: center;
-	background-image: url('../images/darth-vader.jpg');
+.card__picture{
+    @include boxSize(240px, 200px);
+    display: inline-flex;
+    grid-area: picture;
+    box-shadow: $colorBoxShadow;
+    background-size: cover;
+    background-position: center;
+   // background-image: url('../../images/darth-vader.jpg')
 }
 
 .card__social-media-list {
