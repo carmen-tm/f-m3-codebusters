@@ -1,13 +1,12 @@
 import React from 'react';
-import MainPreview from './components/MainPreview';
+import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 
 function App() {
-	return (
-		<div>
-			<MainPreview />
-		</div>
-	);
+  return (
+    <div>
+      <MainPage />
+    </div>
+  );
 }
-
 export default App;
