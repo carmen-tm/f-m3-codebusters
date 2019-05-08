@@ -1,51 +1,58 @@
-*, *::after, *::before {
-    @include boxParameter(0, 0);
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+	@include boxParameter(0, 0);
+	box-sizing: border-box;
 }
 
 body {
-    @include flex(flex, column, unset, unset);
-    @include boxParameter(0, 0);
-    @include textParameter($colorGreenBottle, $fontFamilyCardButton, $fontSizeS, $fontWeightXS);
-    height: 100%;
-    text-align: center;
-    background-color: $colorBeige;  
+	@include flex(flex, column, unset, unset);
+	@include boxParameter(0, 0);
+	@include textParameter(
+		$colorGreenBottle,
+		$fontFamilyCardButton,
+		$fontSizeS,
+		$fontWeightXS
+	);
+	height: 100%;
+	text-align: center;
+	background-color: $colorBeige;
 }
 
-main{
-    background-color: $colorBeige;
-    margin: auto;
-    
-    @media all and (min-width:768px) {
-        @include flex(flex, row-reverse, unset, unset);
-        padding: 20px 40px 20px 40px;
-        margin: auto;
-        max-width: 100%;
-    }
+main {
+	background-color: $colorBeige;
+	margin: auto;
+
+	@media all and (min-width: 768px) {
+		@include flex(flex, row-reverse, unset, unset);
+		padding: 20px 40px 20px 40px;
+		margin: auto;
+		max-width: 100%;
+	}
 }
 
 a {
-    text-decoration: none; 
-    color:inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 ul {
-    list-style: none; 
+	list-style: none;
 }
 
-button{
-    @include boxParameter(0, 0);
-    background: none;
-    border: none;
+button {
+	@include boxParameter(0, 0);
+	background: none;
+	border: none;
 }
 
-.fieldset-item{
-    border: none;
-    @media all and (min-width:768px){
-        min-width: 321px;
-    }
-    @media all and (min-width:1024px){
-    min-width: 399px;
-    margin-right: 10px;
-    }
+.fieldset-item {
+	border: none;
+	@media all and (min-width: 768px) {
+		min-width: 321px;
+	}
+	@media all and (min-width: 1024px) {
+		min-width: 399px;
+		margin-right: 10px;
+	}
 }
