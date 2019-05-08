@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.scss';
 import MainForm from './component/main-form';
+import './stylesheets/App.scss';
+
 
 function App() {
   return (

@@ -1,0 +1,54 @@
+.btn{
+    background-color: $colorOrangeCitrus;
+    color: $colorSimplyWhite;
+ }
+
+.btn-profilePicture{
+     width: 140px;
+     height: 30px;
+     margin-right: 20px;
+     border-radius: 3px;
+     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+}
+
+.btn-share{
+    text-transform: uppercase;
+    width: 199px;
+    margin: auto;
+    padding: 13px;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+    font-size:  14px;
+    font-weight: $fontWeightS;
+    font-family: $fontFamilyCardButton;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon-btn{
+    font-size: 22px;
+}
+
+//Boton de Twitter
+
+.btn-twitter{
+    @include boxSize(199px, unset);
+    @include boxParameter(30px auto, 13px);
+    @include flex(flex, unset, center, center);
+    @include textParameter($colorSimplyWhite, $fontFamilyCardButton, 14px, $fontWeightS);
+    text-transform: uppercase;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+    background-color: #00a0f5;
+}
+
+.twitter-icon{
+    padding-right: 20px;
+    font-size: $fontSizeXL;
+}
+
+.hide__btn-twitter{
+    display: none;
+}
