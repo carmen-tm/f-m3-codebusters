@@ -6,7 +6,9 @@ class MainSections extends React.Component{
   render(){
     return(
       <main className="main-sections__container">
-        <MainPreview/>
+        <MainPreview
+        name= 'Patricia'
+        />
         <MainForm/>
       </main>
     )
