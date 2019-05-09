@@ -18,10 +18,10 @@ We will be glad to hear any idea to improve this exercise. Feel free to leave a 
 
 Codebusters is a team composed of:
 
-- Saray Fernández
-- Clara Miralles
-- Valeria Lorente
-- Patricia Rozada
-- Carmen Torrecillas
+- [Saray Fernández](https://github.com/sarayfg)
+- [Clara Miralles](https://github.com/claramiralles)
+- [Valeria Lorente](https://github.com/valerialp)
+- [Patricia Rozada](https://github.com/patrozada)
+- [Carmen Torrecillas](https://github.com/carmen-tm)
 
 
