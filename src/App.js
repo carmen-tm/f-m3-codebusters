@@ -1,10 +1,13 @@
 import React from 'react';
+
+import MainForm from './components/main-form';
 import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 
+
 function App() {
   return (
-    <div>
+    <div className="App">
       <MainPage />
     </div>
   );
