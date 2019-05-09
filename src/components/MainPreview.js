@@ -1,5 +1,4 @@
 import React from 'react';
-import MainSections from './MainSections'
 
 class MainPreview extends React.Component {
 	render() {
