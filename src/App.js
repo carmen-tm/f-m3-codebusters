@@ -5,7 +5,6 @@ import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 import { userInfo } from 'os';
 
-
 let userInfo = {
   'palette': '', 
   'name': '',
@@ -17,8 +16,6 @@ let userInfo = {
   'photo': '',
   'miniature': '',
 };
-
-
 function App() {
 
   return (
