@@ -6,7 +6,7 @@ class Fieldset extends React.Component {
     render() {
         return (
             <fieldset className="fieldset-item">
-                <Legend legend={this.props.title}/>
+                <Legend legend={this.props.title} classIcon={this.props.classIcon}/>
                 <Panel />
             </fieldset>
         )
