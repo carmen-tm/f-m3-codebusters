@@ -5,9 +5,9 @@ class MainForm extends React.Component {
   render() {
     return (
       <form action="" method="post">
-        <Fieldset />
-        <Fieldset />
-        <Fieldset />
+        <Fieldset title="Carmen"/>
+        <Fieldset title="Clara"/>
+        <Fieldset title="Pat"/>
       </form>
     );
   }
