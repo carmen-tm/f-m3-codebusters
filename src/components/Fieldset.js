@@ -1,6 +1,6 @@
 import React from 'react';
 import Legend from './Legend';
-import Panel from './Panel';
+import Panel from './Legend';
 
 class Fieldset extends React.Component {
     render() {
