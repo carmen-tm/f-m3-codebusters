@@ -9,6 +9,12 @@ class MainSections extends React.Component{
         <MainPreview
         name= 'Patricia'
         job= 'Front end developer'
+        phone= {697845963}
+        email = ''
+        linkedin = 'https://www.linkedin.com/in/sarayfernandezgarcia/'
+        github = ''
+        photo= ''
+        miniature=''
         />
         <MainForm/>
       </main>

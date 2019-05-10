@@ -25,7 +25,7 @@ class MainPreview extends React.Component {
 							id="phone-li"
 							className="card__item-list-no-border card-user__phone phone"
 						>
-							<a id="phone-link" className="card__link-phone" href="">
+							<a id="phone-link" className="card__link-phone" href={this.props.phone}>
 								<i className="fas fa-mobile-alt" title="Mobile icon" />
 							</a>
 						</li>
@@ -33,12 +33,12 @@ class MainPreview extends React.Component {
 							id="email-li"
 							className="card__item-list-no-border card-user__email email"
 						>
-							<a className="card__link-email" href="">
+							<a className="card__link-email" href={this.props.email}>
 								<i className="far fa-envelope" title="Email icon" />
 							</a>
 						</li>
 						<li id="linkedin-li" className="card__item-list-no-border linkedin">
-							<a className="card__link-linkedin" href="" target="_blank">
+							<a className="card__link-linkedin" href={this.props.linkedin} target="_blank">
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
 							</a>
 						</li>
@@ -46,7 +46,7 @@ class MainPreview extends React.Component {
 							<a
 								className="card__link-github"
 								id="gitHub-link"
-								href=""
+								href={this.props.github}
 								target="_blank"
 							>
 								<i className="fab fa-github-alt" title="Github icon" />
