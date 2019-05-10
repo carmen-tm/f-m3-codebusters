@@ -3,22 +3,23 @@ import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 import { userInfo } from 'os';
 
+const infoUser ={
+  name: 'Patricia',
+  job: 'Front end developer',
+  phone: 697845963,
+  email:'',
+  linkedin: 'https://www.linkedin.com/in/sarayfernandezgarcia/',
+  github: '',
+  photo:'',
+  miniature:'',
+}
+ 
 class App extends React.Component {
   render(){
-  let {
-    palette , 
-    name ,
-    job,
-    phone,
-    email,
-    linkedin,
-    github,
-    photo,
-    miniature,
-    }= this.props;
+
   return (
     <div className="App">
-      <MainPage />
+      <MainPage data={infoUser}/>
     </div>
   );}
 }
