@@ -3,17 +3,6 @@ import React from 'react';
 class MainPreview extends React.Component {
 	render() {
 
-let {
-	palette , 
-	name ,
-	job,
-	phone,
-	email,
-	linkedin,
-	github,
-	photo,
-	miniature,
-  }= this.props;
 		return (
 			<section className="main-preview__container">
 				<button className="reset__btn">
@@ -23,8 +12,8 @@ let {
 
 				<div className="card-user__container card__container">
 					<div className="card-user card__container borderLeftGreen">
-						<h2 className="card-user__name">{name}</h2>
-						<h3 className="card-user__job">{job}</h3>
+						<h2 className="card-user__name">{this.props.name}</h2>
+						<h3 className="card-user__job">{this.props.job}</h3>
 					</div>
 				</div>
 

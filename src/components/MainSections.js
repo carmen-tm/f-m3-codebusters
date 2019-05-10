@@ -8,6 +8,7 @@ class MainSections extends React.Component{
       <main className="main-sections__container">
         <MainPreview
         name= 'Patricia'
+        job= 'Front end developer'
         />
         <MainForm/>
       </main>
