@@ -5,9 +5,11 @@ class MainForm extends React.Component {
   render() {
     return (
       <form action="" method="post">
-        <Fieldset title="Carmen" classIcon="far fa-object-ungroup"/>
-        <Fieldset title="Clara"/>
-        <Fieldset title="Pat"/>
+        <Fieldset title="Design" classIcon="far fa-object-ungroup"/>
+        <Fieldset title="Fill"
+        classIcon="far fa-keyboard"/>
+        <Fieldset title="Share"
+        classIcon="fas fa-share-alt"/>
       </form>
     );
   }
