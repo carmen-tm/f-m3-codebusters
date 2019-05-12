@@ -1,15 +1,35 @@
 import React from 'react';
 
-class Input extends React.Component{
-    render(){
-        return(
-            <div className={this.props.divClassName}>
-                <label className={this.props.labelClassName} for={this.props.labelFor}>{this.props.labelInnerText}</label>
+class Input extends React.Component {
+	render() {
+		const {
+			divClassName,
+			labelClassName,
+			labelFor,
+			labelInnerText,
+			inputClassName,
+			inputType,
+			inputId,
+			inputName,
+			inputPlaceholder
+		} = this.props;
 
-                <input className={this.props.inputClassName} type={this.props.inputType} id={this.props.inputId} name={this.props.inputName} placeholder={this.props.inputPlaceholder} required> </input>
-            </div>
-        )
-    }
+		return (
+			<div className={divClassName}>
+				<label className={labelClassName} for={labelFor}>
+					{labelInnerText}
+				</label>
+				<input
+					className={inputClassName}
+					type={inputType}
+					id={inputId}
+					name={inputName}
+					placeholder={inputPlaceholder}
+					required
+				/>
+			</div>
+		);
+	}
 }
 
 export default Input;
