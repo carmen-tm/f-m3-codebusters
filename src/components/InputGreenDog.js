@@ -10,7 +10,7 @@ class InputGreenDog extends React.Component {
 			btnType,
 			btnClassName,
 			btnSrc,
-			btnInnetText,
+			btnInnerText,
 			divPreviewClassName,
 			inputType,
 			inputClassName
@@ -22,12 +22,10 @@ class InputGreenDog extends React.Component {
 					{labelInnerText}
 				</label>
 				<button type={btnType} className={btnClassName} src={btnSrc}>
-					{btnInnetText}
+					{btnInnerText}
 				</button>
 				<div className={divPreviewClassName} />
-				<input type={inputType} className={inputClassName}>
-					{' '}
-				</input>
+				<input type={inputType} className={inputClassName} value={''}/>
 			</div>
 		);
 	}

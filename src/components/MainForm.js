@@ -18,7 +18,7 @@ class MainForm extends React.Component {
 					<PanelColors />
 				</Fieldset>
 
-				{/* <Fieldset
+				<Fieldset
           title="Fill"
           classIcon="far fa-keyboard"
           btnId="ButtonFill"
@@ -26,7 +26,7 @@ class MainForm extends React.Component {
           arrow="down"        
         >
           <PanelFill />
-        </Fieldset>   */}
+        </Fieldset>  
 
 				<Fieldset
 					title="Share"
