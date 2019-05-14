@@ -1,10 +1,24 @@
 import React from 'react';
+import PopUp from './PopUp';
 
 class MainPreview extends React.Component {
+	constructor(props){
+		super(props)
+		this.handlerClickAlert=this.handlerClickAlert.bind(this);
+	}
+	handlerClickAlert(event){
+		console.dir(event.target)
+		// const alertEl = event.target.parentElement.firstChild;
+		const classAlert = 'alert ';
+		classAlert += 'alert-delete'
+
+
+	}
 	render() {
 		return (
 			<section className="main-preview__container">
-				<button className="reset__btn">
+				<PopUp alert={this.handlerClickAlert} classAlert={this.handlerClickAlert()}/>
+				<button className="reset__btn" onClick={this.handlerClickAlert}>
 					<i className="far fa-trash-alt reset__icon" />
 					Reset
 				</button>
