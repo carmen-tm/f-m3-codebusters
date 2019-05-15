@@ -15,7 +15,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="name"
 					inputName="name"
-					inputPlaceholders="Ej: Sally Hill"
+					inputPlaceholders="Ex: Sally Hill"
 				/>
 
 				<Input
@@ -27,7 +27,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="job"
 					inputName="job"
-					inputPlaceholders="Ej: Front-end unicorn"
+					inputPlaceholders="Ex: Front-end unicorn"
 				/>
 
 				<InputGreenDog
@@ -53,7 +53,7 @@ class PanelFill extends React.Component {
 					inputType="email"
 					inputId="email"
 					inputName="email"
-					inputPlaceholders="Ej: sallyhill@gmail.com"
+					inputPlaceholders="Ex: sallyhill@gmail.com"
 				/>
 
 				<Input
@@ -65,7 +65,7 @@ class PanelFill extends React.Component {
 					inputType="tel"
 					inputId="phone"
 					inputName="phone"
-					inputPlaceholders="Ej: 555-55-55-55"
+					inputPlaceholders="Ex: 555-55-55-55"
 				/>
 
 				<Input
@@ -77,7 +77,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="linkedin"
 					inputName="linkedin"
-					inputPlaceholders="Ej: linkedin.com/in/sally.hill"
+					inputPlaceholders="Ex: linkedin.com/in/sally.hill"
 				/>
 
 				<Input
@@ -89,7 +89,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="github"
 					inputName="github"
-					inputPlaceholders="Ej: @sally-hill"
+					inputPlaceholders="Ex: @sally-hill"
 				/>
 			</section>
 		);
