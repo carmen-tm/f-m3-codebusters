@@ -6,16 +6,25 @@ class PanelColors extends React.Component {
         super(props)
         this.state = {
             checked: false,
-            palette: 0,
-            color: 'card-user card__container ',
+            palette: 1,
         }
         this.handlerChangeColor = this.handlerChangeColor.bind(this);
     }
     handlerChangeColor(event) {
         const inputValue = event.currentTarget.value;
-        this.setState(prevState => {
-           console.log(prevState.palette)
-        })
+        const green = 'green-palette';
+        const red  = 'red-palette';
+        const gray = 'gray-palette';
+        
+
+        this.setState({palette: inputValue})
+        if(this.state.palette === 1){
+            
+        }
+
+        //Cambiar dos clases de la tarjeta en MainPreview
+        //Handler: que me cambie el estado y que el nuevo estado me lo compare con palette y en funcion de ello me ponga una clase u otra
+        //Guardamos en estado palette y color --> borderLeftGreen green-palette
     }
     render() {
         return (
