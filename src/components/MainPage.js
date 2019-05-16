@@ -9,7 +9,7 @@ class MainPage extends React.Component {
     return(
       <div className="main-page-wrapper">
         <MainHeader/>
-        <MainSections data={this.props.data}/>
+        <MainSections data={this.props.data} methodInputText={this.props.methodInputText}/>
         <MainFooter/>
       </div>
     );

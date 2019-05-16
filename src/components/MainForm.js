@@ -23,9 +23,10 @@ class MainForm extends React.Component {
           classIcon="far fa-keyboard"
           btnId="ButtonFill"
           arrowId="arrow-fillTheGap"
-          arrow="down"        
+					arrow="down"  
+					    
         >
-          <PanelFill />
+          <PanelFill methodInputText={this.props.methodInputText} />
         </Fieldset>  
 
 				<Fieldset
