@@ -15,6 +15,7 @@ class Input extends React.Component {
 				photo: '',
 				miniature: ''
 			},
+			
 			//Fake value, to see if the setState keeps the Object at all levels right
 			test: true
 		};
