@@ -43,7 +43,7 @@ class App extends React.Component {
 
   return (
     <div className="App">
-      <MainPage data={infoUser} methodInputText={this.handleInputsOnChange}/>
+      <MainPage data={this.state.userInfo} methodInputText={this.handleInputsOnChange}/>
     </div>
   );}
 }
