@@ -1,7 +1,7 @@
 import React from 'react';
 import MainPreview from './MainPreview';
 import MainForm from './MainForm';
-import { tsImportEqualsDeclaration } from '@babel/types';
+
 
 class MainSections extends React.Component{
   render(){

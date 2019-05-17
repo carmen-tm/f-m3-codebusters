@@ -41,8 +41,8 @@ class App extends React.Component {
 		//Need to set the state with callback as we want to keep the PrevState all the time (the other inputs info)
 		this.setState(prevState => {
 			return {
-				userInfo: {
-					...prevState.userInfo,
+				profile: {
+					...prevState.profile,
 					[key]: value
 				}
 			};
