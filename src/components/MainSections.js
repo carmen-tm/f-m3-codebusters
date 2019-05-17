@@ -1,7 +1,7 @@
 import React from 'react';
 import MainPreview from './MainPreview';
 import MainForm from './MainForm';
-import { tsImportEqualsDeclaration } from '@babel/types';
+
 
 class MainSections extends React.Component{
   render(){
@@ -9,7 +9,7 @@ class MainSections extends React.Component{
       <main className="main-sections__container">
         <MainPreview data={this.props.data}
         />
-        <MainForm  methodInputText={this.props.methodInputText}/>
+        <MainForm  methodInputText={this.props.methodInputText} updateAvatar={this.props.updateAvatar}/>
       </main>
     )
   }
