@@ -1,0 +1,58 @@
+.sample-color{
+    width:30px;
+    height: 25px;
+
+}
+.option__container{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center; 
+    margin-bottom: 20px;
+ 
+}
+.palette__container{
+    display:flex;
+    margin-left: 10px;
+  
+}
+.blue-green--1{
+    background-color: $colorGreenBottle;
+}
+.blue-green--2{
+    background-color: $colorGreenyBlue;
+}
+.blue-green--3{
+    background-color: $colorLimePastel;
+}
+
+.red-orange--1{
+    background-color: $colorRedDriedBlood;
+}
+.red-orange--2{
+    background-color: $colorRedValentine;
+}
+.red-orange--3{
+    background-color: $colorOrangeBlood;
+}
+.blue-gray--1{
+    background-color: $colorGraySwamp;
+}
+.blue-gray--2{
+    background-color: $colorGrayFog;
+}
+.blue-gray--3{
+    background-color: $colorSmokeBlue;
+}
+.design{
+    display:flex;
+    justify-content: space-between;
+    padding: 23px 20px 30px 39px;
+
+}
+.section__title{
+    text-transform: uppercase;
+    font-size:$fontSizeS;
+    color:$colorGraySlate; 
+}
+

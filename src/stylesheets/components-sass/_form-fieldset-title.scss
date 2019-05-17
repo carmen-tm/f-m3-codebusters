@@ -1,0 +1,72 @@
+.fieldset__title__container{
+    display: flex;
+    border-top:1px solid $colorGreyStone;
+    justify-content: space-between;
+    font-size: $fontSizeL;
+    background-color: $colorBeige;
+    align-items: center;
+    margin:0 20px;
+    padding: 10px 0 7px;
+}
+.section-share{
+    border-bottom:1px solid $colorGreyStone;
+}
+
+.icon-legend__container{
+    display:flex;
+}
+
+.fieldset__title{
+    text-transform: uppercase;
+    font-family: $fontFamilyCardButton;
+    font-size:$fontSizeL;
+    font-weight: $fontWeightS;
+    color:#54585a;
+    margin:0 10px;
+    font-family: $fontFamilyCardButton;
+    font-weight: $fontWeightS;
+    font-size: $fontSizeL;
+}
+
+.icon--fieldset{
+    color:#e17334;
+    font-size: $fontSizeL;
+}
+
+.btn--collapsable{
+    background-color: transparent;
+    border:1px solid transparent;
+  
+}
+
+.arrow{
+    color:$colorGraySlate;
+    font-size:$fontSizeL;
+}
+
+
+.hidden{
+
+    animation-name: collapsable;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes collapsable {
+        0%{
+            height: auto;
+            opacity: 1;
+            overflow: hidden;
+        }
+        100%{
+            height: 0;
+            opacity: 0;  
+            overflow: hidden;
+            margin: 0 20px 0;
+            padding: 0px 20px 0px 39px;
+        }
+    }
+
+}
+
