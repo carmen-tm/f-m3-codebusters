@@ -1,5 +1,31 @@
 import React from 'react';
 
+function changeClassColorTitle(value){
+	let classCard = 'card-user card__container ';
+	if(parseInt(value) === 1){
+		classCard += 'green-palette borderLeftGreen';
+		return classCard
+ } else if(parseInt(value)  === 2){
+	 classCard += 'red-palette borderLeftRed';
+	 return classCard
+ } else if(parseInt(value)  === 3){
+	 classCard += 'gray-palette borderLeftGray';
+	 return classCard}
+}
+
+function changeClassColorList(value){
+	let classIcons = 'card-sm__container card__container ';
+	if(parseInt(value) === 1){
+		classIcons += 'green-palette';
+		return classIcons
+ } else if(parseInt(value)  === 2){
+	 classIcons += 'red-palette';
+	 return classIcons
+ } else if(parseInt(value)  === 3){
+	 classIcons += 'gray-palette';
+	 return classIcons}
+}
+
 class MainPreview extends React.Component {
 	render() {
 
@@ -11,7 +37,7 @@ class MainPreview extends React.Component {
 				</button>
 
 				<div className="card-user__container card__container">
-					<div className="card-user card__container borderLeftGreen">
+					<div className={changeClassColorTitle(this.props.color)}>
 						<h2 className="card-user__name">{this.props.data.name}</h2>
 						<h3 className="card-user__job">{this.props.data.job}</h3>
 					</div>
@@ -19,7 +45,7 @@ class MainPreview extends React.Component {
 
 				<div className="card__picture js__profile-image" />
 
-				<div className="card-sm__container card__container">
+				<div className={changeClassColorList(this.props.color)}>
 					<ul className="card__social-media-list">
 						<li
 							id="phone-li"

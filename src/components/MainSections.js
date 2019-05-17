@@ -7,7 +7,9 @@ class MainSections extends React.Component{
   render(){
     return(
       <main className="main-sections__container">
-        <MainPreview data={this.props.data}
+        <MainPreview 
+         data={this.props.data}
+         color={this.props.color}
         />
         <MainForm  
         methodInputText={this.props.methodInputText} 

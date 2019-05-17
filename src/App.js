@@ -20,26 +20,19 @@ class App extends React.Component {
 			},
 			palette : {
 				number: 1,
-				color: 'green-palette, borderLeftGreen'	
 			}
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
-		this.changeClassColor = this.changeClassColor.bind(this);
 	}
-	changeClassColor(){
-		let classCard = 'card-user card__container '
-		if(this.state.palette.number ===1){classCard += 'green-palette borderLeftGreen'
-	 } else if(this.state.palette.number ===2){classCard += 'red-palette borderLeftRed'
-	 } else if(this.state.palette.number ===3){classCard += 'gray-palette borderLeftGray'}
-	}
-
+	
   handleColorChange(event){
 		const {value} = event.currentTarget;
 		this.setState(prevState => {
 			return {
-				palette: {
-					number: value,
+				palette:{
+					...prevState.palette,
+				 number: value,
 				}
 			}
 		});
@@ -68,6 +61,7 @@ class App extends React.Component {
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
 			checked={this.state.palette.number}
+			color={this.state.palette.number}
 			/>
     </div>
   );}
