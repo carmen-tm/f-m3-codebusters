@@ -1,7 +1,7 @@
 import React from 'react';
 import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
-import { userInfo } from 'os';
+//import { userInfo } from 'os';
 
 
 class App extends React.Component {
@@ -43,7 +43,7 @@ class App extends React.Component {
 
   return (
     <div className="App">
-      <MainPage data={infoUser} methodInputText={this.handleInputsOnChange}/>
+      <MainPage data={this.state.userInfo} methodInputText={this.handleInputsOnChange}/>
     </div>
   );}
 }
