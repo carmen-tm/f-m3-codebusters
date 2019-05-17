@@ -9,7 +9,7 @@ class MainSections extends React.Component{
       <main className="main-sections__container">
         <MainPreview data={this.props.data}
         />
-        <MainForm/>
+        <MainForm  methodInputText={this.props.methodInputText}/>
       </main>
     )
   }

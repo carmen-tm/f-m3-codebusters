@@ -16,6 +16,7 @@ class PanelFill extends React.Component {
 					inputId="name"
 					inputName="name"
 					inputPlaceholders="Ex: Sally Hill"
+					methodInputText={this.props.methodInputText}
 				/>
 
 				<Input
@@ -28,6 +29,7 @@ class PanelFill extends React.Component {
 					inputId="job"
 					inputName="job"
 					inputPlaceholders="Ex: Front-end unicorn"
+					methodInputText={this.props.methodInputText}
 				/>
 
 				<InputGreenDog
@@ -54,6 +56,7 @@ class PanelFill extends React.Component {
 					inputId="email"
 					inputName="email"
 					inputPlaceholders="Ex: sallyhill@gmail.com"
+					methodInputText={this.props.methodInputText}
 				/>
 
 				<Input
@@ -66,6 +69,7 @@ class PanelFill extends React.Component {
 					inputId="phone"
 					inputName="phone"
 					inputPlaceholders="Ex: 555-55-55-55"
+					methodInputText={this.props.methodInputText}
 				/>
 
 				<Input
@@ -78,6 +82,7 @@ class PanelFill extends React.Component {
 					inputId="linkedin"
 					inputName="linkedin"
 					inputPlaceholders="Ex: linkedin.com/in/sally.hill"
+					methodInputText={this.props.methodInputText}
 				/>
 
 				<Input
@@ -90,6 +95,7 @@ class PanelFill extends React.Component {
 					inputId="github"
 					inputName="github"
 					inputPlaceholders="Ex: @sally-hill"
+					methodInputText={this.props.methodInputText}
 				/>
 			</section>
 		);
