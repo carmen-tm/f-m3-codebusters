@@ -15,7 +15,10 @@ class MainForm extends React.Component {
 					arrowId="arrow-design"
 					arrow="up"
 				>
-					<PanelColors />
+					<PanelColors 
+					methodColorChange={this.props.methodColorChange}
+					checked={this.props.checked}
+					/>
 				</Fieldset>
 
 				<Fieldset
@@ -23,9 +26,10 @@ class MainForm extends React.Component {
           classIcon="far fa-keyboard"
           btnId="ButtonFill"
           arrowId="arrow-fillTheGap"
-          arrow="down"        
+					arrow="down"  
+					    
         >
-          <PanelFill />
+          <PanelFill methodInputText={this.props.methodInputText} />
         </Fieldset>  
 
 				<Fieldset

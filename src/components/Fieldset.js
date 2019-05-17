@@ -4,7 +4,7 @@ import Panel from './Panel';
 
 class Fieldset extends React.Component {
 	render() {
-		const { title, classIcon, btnId, arrowId, arrow, children } = this.props;
+		const { title, classIcon, btnId, arrowId, arrow, children} = this.props;
 		return (
 			<fieldset className="fieldset-item">
 				<Legend
@@ -14,7 +14,9 @@ class Fieldset extends React.Component {
 					arrowId={arrowId}
 					arrow={arrow}
 				/>
-				<Panel children={children} />
+				<Panel>
+				{children}
+				</Panel>
 			</fieldset>
 		);
 	}
