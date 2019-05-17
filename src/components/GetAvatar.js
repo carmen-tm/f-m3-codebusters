@@ -52,13 +52,13 @@ class GetAvatar extends React.Component {
 					{labelInnerText}
 				</label>
 
-				<button type={btnType} className={btnClassName} src={btnSrc}  onClick={this.handleFilePicker}>
+				<button type={btnType} className={btnClassName} src={btnSrc} onClick={this.handleFilePicker}>
 					{btnInnerText}
 				</button>
 
 				<div className={divPreviewClassName} style={this.getPreview(isAvatarDefault, avatar)}/>
 
-				<input type={inputType} className={inputClassName} value={''}  onChange={this.uploadImage}/>
+				<input type={inputType} className={inputClassName} value={''} ref={this.myFileField} onChange={this.uploadImage}/>
 			</div>
 		);
 	}

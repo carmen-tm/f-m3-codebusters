@@ -1,30 +1,39 @@
 import React from 'react';
 import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
-import { userInfo } from 'os';
+import defaultImage from './assets/defaultImage';
+
 
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-			userInfo: {
+			isAvatarDefault: true,
+			profile: {
 				name: 'User name',
 				job: 'User job',
 				phone: '',
 				email: '',
 				linkedin: '#',
 				github: '#',
-				photo: '',
+				avatar: defaultImage,
 				miniature: ''
 			},
-			
-			//Fake value, to see if the setState keeps the Object at all levels right
-			test: true
     };
-    this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
+		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
+		this.updateAvatar = this.updateAvatar.bind(this);
   }
-
+  updateAvatar(img) {
+    const {profile} = this.state;
+    this.setState(prevState => {
+      const newProfile = {...profile, avatar: img};
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      }
+    });
+  }
   handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -43,7 +52,7 @@ class App extends React.Component {
 
   return (
     <div className="App">
-      <MainPage data={this.state.userInfo} methodInputText={this.handleInputsOnChange}/>
+      <MainPage data={this.state.profile} methodInputText={this.handleInputsOnChange} updateAvatar={this.updateAvatar}/>
     </div>
   );}
 }
