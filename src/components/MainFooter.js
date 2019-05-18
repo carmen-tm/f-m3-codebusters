@@ -9,7 +9,7 @@ class MainFooter extends React.Component{
         <small className="copyright">Awesome profile-cards @2019</small>
         <div className="logo-container">
           <img className="logo-frontNerds" src={GroupLogo} alt="GroupLogo"/>
-          <a href="https://adalab.es/" target="_blank" className="logo-adalab__link">
+          <a href="https://adalab.es/" target="_blank" rel="noopener noreferrer" className="logo-adalab__link">
               <img className="logo-adalab" src={AdaLogo} alt="Adalab"/>
           </a>
         </div>

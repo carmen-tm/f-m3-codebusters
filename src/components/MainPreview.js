@@ -65,7 +65,12 @@ class MainPreview extends React.Component {
 							</a>
 						</li>
 						<li id="linkedin-li" className="card__item-list-no-border linkedin">
-							<a className="card__link-linkedin" href={linkedin} target="_blank">
+							<a 
+								className="card__link-linkedin" 
+								href={linkedin} 
+								target="_blank" 
+								rel="noopener noreferrer"
+							>
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
 							</a>
 						</li>
@@ -75,6 +80,7 @@ class MainPreview extends React.Component {
 								id="gitHub-link"
 								href={github}
 								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<i className="fab fa-github-alt" title="Github icon" />
 							</a>

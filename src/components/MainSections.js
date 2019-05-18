@@ -15,11 +15,8 @@ class MainSections extends React.Component{
         methodInputText={this.props.methodInputText} 
         methodColorChange={this.props.methodColorChange}
         checked={this.props.checked}
+        updateAvatar={this.props.updateAvatar}
         />
-<<<<<<< HEAD
-=======
-        <MainForm  methodInputText={this.props.methodInputText} updateAvatar={this.props.updateAvatar}/>
->>>>>>> 4e06274622a01b1f3146de3776bc7c33e9d0f86e
       </main>
     )
   }
