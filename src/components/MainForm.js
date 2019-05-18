@@ -15,7 +15,10 @@ class MainForm extends React.Component {
 					arrowId="arrow-design"
 					arrow="up"
 				>
-					<PanelColors />
+					<PanelColors 
+					methodColorChange={this.props.methodColorChange}
+					checked={this.props.checked}
+					/>
 				</Fieldset>
 
 				<Fieldset
