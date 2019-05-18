@@ -28,7 +28,8 @@ function changeClassColorList(value){
 
 class MainPreview extends React.Component {
 	render() {
-
+		const {name,job,phone,email,linkedin,github} = this.props.data;
+		const {color} =this.props;
 		return (
 			<section className="main-preview__container">
 				<button className="reset__btn">
@@ -37,21 +38,21 @@ class MainPreview extends React.Component {
 				</button>
 
 				<div className="card-user__container card__container">
-					<div className={changeClassColorTitle(this.props.color)}>
-						<h2 className="card-user__name">{this.props.data.name}</h2>
-						<h3 className="card-user__job">{this.props.data.job}</h3>
+					<div className={changeClassColorTitle(color)}>
+						<h2 className="card-user__name">{name}</h2>
+						<h3 className="card-user__job">{job}</h3>
 					</div>
 				</div>
 
 				<div className="card__picture js__profile-image" />
 
-				<div className={changeClassColorList(this.props.color)}>
+				<div className={changeClassColorList(color)}>
 					<ul className="card__social-media-list">
 						<li
 							id="phone-li"
 							className="card__item-list-no-border card-user__phone phone"
 						>
-							<a id="phone-link" className="card__link-phone" href={this.props.data.phone}>
+							<a id="phone-link" className="card__link-phone" href={phone}>
 								<i className="fas fa-mobile-alt" title="Mobile icon" />
 							</a>
 						</li>
@@ -59,12 +60,12 @@ class MainPreview extends React.Component {
 							id="email-li"
 							className="card__item-list-no-border card-user__email email"
 						>
-							<a className="card__link-email" href={this.props.data.email}>
+							<a className="card__link-email" href={email}>
 								<i className="far fa-envelope" title="Email icon" />
 							</a>
 						</li>
 						<li id="linkedin-li" className="card__item-list-no-border linkedin">
-							<a className="card__link-linkedin" href={this.props.data.linkedin} target="_blank">
+							<a className="card__link-linkedin" href={linkedin} target="_blank">
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
 							</a>
 						</li>
@@ -72,7 +73,7 @@ class MainPreview extends React.Component {
 							<a
 								className="card__link-github"
 								id="gitHub-link"
-								href={this.props.data.github}
+								href={github}
 								target="_blank"
 							>
 								<i className="fab fa-github-alt" title="Github icon" />

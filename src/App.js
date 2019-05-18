@@ -46,7 +46,7 @@ class App extends React.Component {
 		this.setState(prevState => {
 			return {
 				profile: {
-					...prevState.userInfo,
+					...prevState.profile,
 					[key]: value
 				}
 			};
