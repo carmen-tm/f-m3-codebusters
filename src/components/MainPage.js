@@ -5,18 +5,19 @@ import MainFooter from './MainFooter';
 
 
 class MainPage extends React.Component {
-  render(){
-    return(
+  render() {
+    return (
       <div className="main-page-wrapper">
-        <MainHeader/>
-        <MainSections 
-        data={this.props.data} 
-        methodInputText={this.props.methodInputText} 
-        methodColorChange={this.props.methodColorChange}
-        checked={this.props.checked}
-        color={this.props.color}
+        <MainHeader />
+        <MainSections
+          data={this.props.data}
+          methodInputText={this.props.methodInputText}
+          methodColorChange={this.props.methodColorChange}
+          checked={this.props.checked}
+          color={this.props.color}
+          updateAvatar={this.props.updateAvatar}
         />
-        <MainFooter/>
+        <MainFooter />
       </div>
     );
   }

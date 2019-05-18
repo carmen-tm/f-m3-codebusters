@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './Input';
-import InputGreenDog from './InputGreenDog';
+import GetAvatar from './GetAvatar'
 
 class PanelFill extends React.Component {
 	render() {
@@ -32,7 +32,7 @@ class PanelFill extends React.Component {
 					methodInputText={this.props.methodInputText}
 				/>
 
-				<InputGreenDog
+				<GetAvatar
 					divClassName="fillTheGap-label profilePicture-align"
 					labelClassName="fillTheGap-label"
 					labelFor="profilePicture"
@@ -44,6 +44,7 @@ class PanelFill extends React.Component {
 					divPreviewClassName="fillTheGap-input profile-miniature js__profile-preview"
 					inputType="file"
 					inputClassName="input-file js__profile-upload-btn"
+					updateAvatar={this.props.updateAvatar}
 				/>
 
 				<Input

@@ -29,7 +29,7 @@ class MainForm extends React.Component {
 					arrow="down"  
 					    
         >
-          <PanelFill methodInputText={this.props.methodInputText} />
+          <PanelFill methodInputText={this.props.methodInputText} updateAvatar={this.props.updateAvatar}/>
         </Fieldset>  
 
 				<Fieldset

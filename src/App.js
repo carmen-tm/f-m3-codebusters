@@ -1,13 +1,22 @@
 import React from 'react';
 import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
+<<<<<<< HEAD
 //import { userInfo } from 'os';
+=======
+import defaultImage from './assets/defaultImage';
+
+>>>>>>> 4e06274622a01b1f3146de3776bc7c33e9d0f86e
 
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+<<<<<<< HEAD
+=======
+			isAvatarDefault: true,
+>>>>>>> 4e06274622a01b1f3146de3776bc7c33e9d0f86e
 			profile: {
 				name: 'User name',
 				job: 'User job',
@@ -15,7 +24,7 @@ class App extends React.Component {
 				email: '',
 				linkedin: '#',
 				github: '#',
-				photo: '',
+				avatar: defaultImage,
 				miniature: ''
 			},
 			palette : {
@@ -38,6 +47,16 @@ class App extends React.Component {
 		});
 	}
  
+  updateAvatar(img) {
+    const {profile} = this.state;
+    this.setState(prevState => {
+      const newProfile = {...profile, avatar: img};
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      }
+    });
+  }
   handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -56,6 +75,7 @@ class App extends React.Component {
 
   return (
     <div className="App">
+<<<<<<< HEAD
 			<MainPage 
 			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
@@ -63,6 +83,9 @@ class App extends React.Component {
 			checked={this.state.palette.number}
 			color={this.state.palette.number}
 			/>
+=======
+      <MainPage data={this.state.profile} methodInputText={this.handleInputsOnChange} updateAvatar={this.updateAvatar}/>
+>>>>>>> 4e06274622a01b1f3146de3776bc7c33e9d0f86e
     </div>
   );}
 }
