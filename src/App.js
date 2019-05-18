@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-			userInfo: {
+			profile: {
 				name: 'User name',
 				job: 'User job',
 				phone: '',
@@ -45,7 +45,7 @@ class App extends React.Component {
 		//Need to set the state with callback as we want to keep the PrevState all the time (the other inputs info)
 		this.setState(prevState => {
 			return {
-				userInfo: {
+				profile: {
 					...prevState.userInfo,
 					[key]: value
 				}
@@ -57,7 +57,7 @@ class App extends React.Component {
   return (
     <div className="App">
 			<MainPage 
-			data={this.state.userInfo} 
+			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
 			checked={this.state.palette.number}
