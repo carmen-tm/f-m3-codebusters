@@ -7,6 +7,7 @@ class Landing extends Component {
             <div>
                 <p>Soy la landing!! </p>
                 <Link to = "/card-generator">Empezar</Link>
+
             </div>
         )
     }
