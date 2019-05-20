@@ -29,7 +29,7 @@ function changeClassColorList(value){
 
 class MainPreview extends React.Component {
 	render() {
-		const {name,job,phone,email,linkedin,github, avatar} = this.props.data;
+		const {name,job,phone,email,linkedin,github, photo} = this.props.data;
 		const {color} =this.props;
 		return (
 			<section className="main-preview__container">
@@ -45,7 +45,7 @@ class MainPreview extends React.Component {
 					</div>
 				</div>
 
-				<div className="card__picture js__profile-image" style={{backgroundImage:`url(${avatar})`}}/>
+				<div className="card__picture js__profile-image" style={{backgroundImage:`url(${photo})`}}/>
 
 				<div className={changeClassColorList(color)}>
 					<ul className="card__social-media-list">

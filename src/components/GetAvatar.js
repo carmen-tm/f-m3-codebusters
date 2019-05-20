@@ -43,7 +43,7 @@ class GetAvatar extends React.Component {
 			inputType,
 			inputClassName,
 			isAvatarDefault,
-			avatar
+			photo
 		} = this.props;
 
 		return (
@@ -56,7 +56,7 @@ class GetAvatar extends React.Component {
 					{btnInnerText}
 				</button>
 
-				<div className={divPreviewClassName} style={this.getPreview(isAvatarDefault, avatar)}/>
+				<div className={divPreviewClassName} style={this.getPreview(isAvatarDefault, photo)}/>
 
 				<input type={inputType} className={inputClassName} value={''} ref={this.myFileField} onChange={this.uploadImage}/>
 			</div>

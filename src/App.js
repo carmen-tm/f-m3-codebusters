@@ -10,12 +10,12 @@ class App extends React.Component {
     super(props)
     this.state = {
 			isAvatarDefault: true,
-			circles:{
-				phone: false,
-				email: false,
-				linkedin: false,
-				github: false
-			},
+			// circles:{
+			// 	phone: false,
+			// 	email: false,
+			// 	linkedin: false,
+			// 	github: false
+			// },
 			profile: {
 				name: 'User name',
 				job: 'User job',
@@ -24,7 +24,7 @@ class App extends React.Component {
 				emailIsFilled:'',
 				linkedin: '',
 				github: '',
-				avatar: defaultImage,
+				photo: defaultImage,
 				miniature: ''
 			},
 			palette : {
@@ -52,7 +52,7 @@ class App extends React.Component {
   updateAvatar(image) {
     const {profile} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: image};
+      const newProfile = {...profile, photo: image};
       return {
         profile: newProfile,
         isAvatarDefault: false
@@ -66,10 +66,10 @@ class App extends React.Component {
 		//Need to set the state with callback as we want to keep the PrevState all the time (the other inputs info)
 		this.setState(prevState => {
 			return {
-				circles: {
-					...prevState.circles,
-					[key]:true,
-				},
+				// circles: {
+				// 	...prevState.circles,
+				// 	[key]:true,
+				// },
 				profile: {
 					...prevState.profile,
 					[key]: value
@@ -89,8 +89,8 @@ class App extends React.Component {
     <div className="App">
 			<MainPage 
 			data={this.state.profile}
-			circles = {this.state.circles}
-			methodCircles = {this.addColorCircles}
+			// circles = {this.state.circles}
+			// methodCircles = {this.addColorCircles}
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
 			checked={this.state.palette.number}
