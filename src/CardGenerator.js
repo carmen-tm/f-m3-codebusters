@@ -1,11 +1,11 @@
 import React from 'react';
 import MainPage from './components/MainPage.js';
-import './stylesheets/App.scss';
+import './stylesheets/CardGenerator.scss';
 import defaultImage from './assets/defaultImage';
 
 
 
-class App extends React.Component {
+class CardGenerator extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -79,4 +79,4 @@ class App extends React.Component {
     </div>
   );}
 }
-export default App;
+export default CardGenerator;
