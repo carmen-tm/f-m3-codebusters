@@ -23,6 +23,9 @@ class App extends React.Component {
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
+		this.showURL = this.showURL.bind(this);
+		this.sendRequest = this.sendRequest.bind(this);
+		this.handlerButtonShare = this.handlerButtonShare.bind(this);
 	}
 	
   handleColorChange(event){
@@ -62,36 +65,42 @@ class App extends React.Component {
 		});
 	}
 
-// 	sendRequest(this.state) {
-//     buttonShareEL.disabled = true;
-
-//     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-//         method: 'POST',
-//         body: JSON.stringify(userInfo),
-//         headers: {
-//             'content-type': 'application/json'
-//         },
-//     })
-//         .then(function (resp) { buttonShareEL.disabled = false; return resp.json(); })
-//         .then(function (result) { showURL(result); })
-//         .catch(function (error) { console.log(error); });
-// }
-
-// showURL(result) {
-//     const responseURL = document.querySelector('.response');
-//     const twitterBtnEl = document.querySelector('.btn-twitter');
-//     const twitterLink = document.querySelector('.twitter__link');
-//     const defaultTweet = "https://twitter.com/intent/tweet?text=My awesome profile card ";
+	sendRequest(profile,buttonShare){
+		buttonShare.disabled = true;
+		console.log(this.state.profile)
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+			method: 'POST',
+			body: JSON.stringify(profile),
+			headers: {
+				'content-type': 'application/json'
+			},
+    })
+		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
+		.then(function (result) { this.showURL(result); })
+		.catch(function (error) { console.log(error); });
+	}
+	handlerButtonShare(event){
+		const buttonShare = event.currentTarget;
+		console.log('1');
+		this.sendRequest(this.props.profile,buttonShare);
+	}
+	
+	showURL(result) {
+		console.log('mira saray funciono')
+    // const responseURL = document.querySelector('.response');
+    // const twitterBtnEl = document.querySelector('.btn-twitter');
+    // const twitterLink = document.querySelector('.twitter__link');
+    // const defaultTweet = "https://twitter.com/intent/tweet?text=My awesome profile card ";
       
-//      if (result.success) {
-//         responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-//         twitterBtnEl.classList.remove('hidden');
-//         twitterLink.href = defaultTweet + result.cardURL;
+    //  if (result.success) {
+    //     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    //     twitterBtnEl.classList.remove('hidden');
+    //     twitterLink.href = defaultTweet + result.cardURL;
 
-//     } else {
-//         responseURL.innerHTML = 'ERROR:' + result.error;
-//     }
-// }
+    // } else {
+    //     responseURL.innerHTML = 'ERROR:' + result.error;
+    // }
+}
   render(){
 
   return (
@@ -103,6 +112,7 @@ class App extends React.Component {
 			checked={this.state.profile.palette}
 			color={this.state.profile.palette}
 			updateAvatar={this.updateAvatar}
+			btnShare={this.handlerButtonShare}
 			/>
     </div>
   );}
