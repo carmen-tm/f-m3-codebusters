@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import CardGenerator from './CardGenerator';
+import App from './App';
 import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
   <HashRouter>
-    <CardGenerator />
+    <App />
   </HashRouter>,
   document.getElementById("root")
 );
