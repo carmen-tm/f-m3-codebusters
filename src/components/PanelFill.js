@@ -82,7 +82,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="linkedin"
 					inputName="linkedin"
-					inputPlaceholders="Ex: linkedin.com/in/sally.hill"
+					inputPlaceholders="Ex: sally.hill"
 					methodInputText={this.props.methodInputText}
 				/>
 
@@ -95,7 +95,7 @@ class PanelFill extends React.Component {
 					inputType="text"
 					inputId="github"
 					inputName="github"
-					inputPlaceholders="Ex: @sally-hill"
+					inputPlaceholders="Ex: sally-hill"
 					methodInputText={this.props.methodInputText}
 				/>
 			</section>
