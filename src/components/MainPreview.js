@@ -25,10 +25,7 @@ function changeClassColorList(value){
 	 classIcons += 'gray-palette';
 	 return classIcons}
 }
-function addColorCircles([key]){
-	let circleClass = '';
-	return ([key]) ? circleClass='card__item-list' : circleClass='card__item-list-no-border'
-};
+
 
 class MainPreview extends React.Component {
 	render() {
@@ -54,7 +51,7 @@ class MainPreview extends React.Component {
 					<ul className="card__social-media-list">
 						<li
 							id="phone-li"
-							className= {(`${addColorCircles(phone)} card-user__phone phone` )}
+							className= "card__item-list card-user__phone phone"
 						>
 							<a id="phone-link" className="card__link-phone" href={phone}>
 								<i className="fas fa-mobile-alt" title="Mobile icon" />
@@ -62,13 +59,13 @@ class MainPreview extends React.Component {
 						</li>
 						<li
 							id="email-li"
-							className="card__item-list-no-border card-user__email email"
+							className="card__item-list card-user__email email"
 						>
 							<a className="card__link-email" href={email}>
 								<i className="far fa-envelope" title="Email icon" />
 							</a>
 						</li>
-						<li id="linkedin-li" className="card__item-list-no-border linkedin">
+						<li id="linkedin-li" className="card__item-list linkedin">
 							<a 
 								className="card__link-linkedin" 
 								href={`https://www.linkedin.com/in/${linkedin}`}
@@ -78,7 +75,7 @@ class MainPreview extends React.Component {
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
 							</a>
 						</li>
-						<li id="github-li" className="card__item-list-no-border github">
+						<li id="github-li" className="card__item-list github">
 							<a
 								className="card__link-github"
 								id="gitHub-link"

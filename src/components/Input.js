@@ -31,7 +31,7 @@ class Input extends React.Component {
 			inputType,
 			inputId,
 			inputName,
-			inputPlaceholder
+			inputPlaceholders
 		} = this.props;
 
 		return (
@@ -46,7 +46,7 @@ class Input extends React.Component {
 					type={inputType}
 					id={inputId}
 					name={inputName}
-					placeholder={inputPlaceholder}
+					placeholder={inputPlaceholders}
 					// value={this.fillValueWithState()}
 					required
 				/>

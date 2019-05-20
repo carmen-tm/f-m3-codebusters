@@ -34,6 +34,7 @@ class App extends React.Component {
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
+		// this.addColorCircles = this.addColorCircles.bind(this);
 	}
 	
   handleColorChange(event){
@@ -76,6 +77,11 @@ class App extends React.Component {
 			};
 		});
 	}
+	// addColorCircles([key]){
+	// 	this.setState 
+	// 	let circleClass = '';
+	// 	return ([key]) ? circleClass='card__item-list' : circleClass='card__item-list-no-border'
+	// };
 	
   render(){
 
@@ -83,7 +89,8 @@ class App extends React.Component {
     <div className="App">
 			<MainPage 
 			data={this.state.profile}
-			circles = {this.state.circles} 
+			circles = {this.state.circles}
+			methodCircles = {this.addColorCircles}
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
 			checked={this.state.palette.number}
