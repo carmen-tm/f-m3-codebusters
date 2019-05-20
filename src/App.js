@@ -3,12 +3,10 @@ import MainPage from './components/MainPage.js';
 import './stylesheets/App.scss';
 import defaultImage from './assets/defaultImage';
 
-
-
 class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
+	constructor(props) {
+		super(props);
+		this.state = {
 			isAvatarDefault: true,
 			// circles:{
 			// 	phone: false,
@@ -21,45 +19,56 @@ class App extends React.Component {
 				job: 'User job',
 				phone: '',
 				email: '',
-				emailIsFilled:'',
+				emailIsFilled: '',
 				linkedin: '',
 				github: '',
 				photo: defaultImage,
 				miniature: ''
 			},
-			palette : {
-				number: 1,
+			palette: {
+				number: 1
 			}
-    };
+		};
+
+		//Bind all class methods
+		this.fillValueWithState = this.fillValueWithState.bind(this);
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
 		// this.addColorCircles = this.addColorCircles.bind(this);
 	}
-	
-  handleColorChange(event){
-		const {value} = event.currentTarget;
+
+	//Methods:
+	handleColorChange(event) {
+		const { value } = event.currentTarget;
 		this.setState(prevState => {
 			return {
-				palette:{
+				palette: {
 					...prevState.palette,
-				 number: value,
+					number: value
 				}
-			}
+			};
 		});
 	}
- 
-  updateAvatar(image) {
-    const {profile} = this.state;
-    this.setState(prevState => {
-      const newProfile = {...profile, photo: image};
-      return {
-        profile: newProfile,
-        isAvatarDefault: false
-      }
-    });
-  }
-  handleInputsOnChange(event) {
+	//TODO
+	fillValueWithState(event) {
+		const key = event.currentTarget.name;
+		const controlledValue = this.state.userInfo[key];
+		console.log(controlledValue);
+		return controlledValue;
+	}
+
+	updateAvatar(image) {
+		const { profile } = this.state;
+		this.setState(prevState => {
+			const newProfile = { ...profile, photo: image };
+			return {
+				profile: newProfile,
+				isAvatarDefault: false
+			};
+		});
+	}
+	handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
 
@@ -78,26 +87,27 @@ class App extends React.Component {
 		});
 	}
 	// addColorCircles([key]){
-	// 	this.setState 
+	// 	this.setState
 	// 	let circleClass = '';
 	// 	return ([key]) ? circleClass='card__item-list' : circleClass='card__item-list-no-border'
 	// };
-	
-  render(){
 
-  return (
-    <div className="App">
-			<MainPage 
-			data={this.state.profile}
-			// circles = {this.state.circles}
-			// methodCircles = {this.addColorCircles}
-			methodInputText={this.handleInputsOnChange} 
-			methodColorChange={this.handleColorChange} 
-			checked={this.state.palette.number}
-			color={this.state.palette.number}
-			updateAvatar={this.updateAvatar}
-			/>
-    </div>
-  );}
+	render() {
+		return (
+			<div className="App">
+				<MainPage
+					data={this.state.profile}
+					// circles = {this.state.circles}
+					// methodCircles = {this.addColorCircles}
+					methodInputText={this.handleInputsOnChange}
+					methodValueText={this.fillValueWithState}
+					methodColorChange={this.handleColorChange}
+					checked={this.state.palette.number}
+					color={this.state.palette.number}
+					updateAvatar={this.updateAvatar}
+				/>
+			</div>
+		);
+	}
 }
 export default App;
