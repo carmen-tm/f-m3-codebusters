@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
 			isAvatarDefault: true,
 			profile: {
+				palette: 1,
 				name: 'User name',
 				job: 'User job',
 				phone: '',
@@ -18,11 +19,7 @@ class App extends React.Component {
 				linkedin: '#',
 				github: '#',
 				avatar: defaultImage,
-				miniature: ''
 			},
-			palette : {
-				number: 1,
-			}
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
@@ -32,9 +29,9 @@ class App extends React.Component {
 		const {value} = event.currentTarget;
 		this.setState(prevState => {
 			return {
-				palette:{
-					...prevState.palette,
-				 number: value,
+				profile:{
+					...prevState.profile,
+				 palette: value,
 				}
 			}
 		});
@@ -64,6 +61,37 @@ class App extends React.Component {
 			};
 		});
 	}
+
+// 	sendRequest(this.state) {
+//     buttonShareEL.disabled = true;
+
+//     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+//         method: 'POST',
+//         body: JSON.stringify(userInfo),
+//         headers: {
+//             'content-type': 'application/json'
+//         },
+//     })
+//         .then(function (resp) { buttonShareEL.disabled = false; return resp.json(); })
+//         .then(function (result) { showURL(result); })
+//         .catch(function (error) { console.log(error); });
+// }
+
+// showURL(result) {
+//     const responseURL = document.querySelector('.response');
+//     const twitterBtnEl = document.querySelector('.btn-twitter');
+//     const twitterLink = document.querySelector('.twitter__link');
+//     const defaultTweet = "https://twitter.com/intent/tweet?text=My awesome profile card ";
+      
+//      if (result.success) {
+//         responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+//         twitterBtnEl.classList.remove('hidden');
+//         twitterLink.href = defaultTweet + result.cardURL;
+
+//     } else {
+//         responseURL.innerHTML = 'ERROR:' + result.error;
+//     }
+// }
   render(){
 
   return (
@@ -72,8 +100,8 @@ class App extends React.Component {
 			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
-			checked={this.state.palette.number}
-			color={this.state.palette.number}
+			checked={this.state.profile.palette}
+			color={this.state.profile.palette}
 			updateAvatar={this.updateAvatar}
 			/>
     </div>
