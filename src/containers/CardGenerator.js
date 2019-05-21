@@ -22,7 +22,8 @@ class CardGenerator extends React.Component {
 			},
 			palette : {
 				number: 1,
-			}
+			},
+			twitter: false,
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
@@ -76,6 +77,7 @@ class CardGenerator extends React.Component {
 			checked={this.state.palette.number}
 			color={this.state.palette.number}
 			updateAvatar={this.updateAvatar}
+			twitter={this.state.twitter}
 			/>
     </div>
   );}

@@ -17,6 +17,7 @@ class MainSections extends React.Component{
         methodColorChange={this.props.methodColorChange}
         checked={this.props.checked}
         updateAvatar={this.props.updateAvatar}
+        twitter={this.props.twitter}
         />
       </main>
     )
