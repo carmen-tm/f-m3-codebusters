@@ -26,9 +26,10 @@ function changeClassColorList(value){
 	 return classIcons}
 }
 
+
 class MainPreview extends React.Component {
 	render() {
-		const {name,job,phone,email,linkedin,github} = this.props.data;
+		const {name,job,phone,email,linkedin,github, photo} = this.props.data;
 		const {color} =this.props;
 		return (
 			<section className="main-preview__container">
@@ -44,13 +45,13 @@ class MainPreview extends React.Component {
 					</div>
 				</div>
 
-				<div className="card__picture js__profile-image" />
+				<div className="card__picture js__profile-image" style={{backgroundImage:`url(${photo})`}}/>
 
 				<div className={changeClassColorList(color)}>
 					<ul className="card__social-media-list">
 						<li
 							id="phone-li"
-							className="card__item-list-no-border card-user__phone phone"
+							className= "card__item-list card-user__phone phone"
 						>
 							<a id="phone-link" className="card__link-phone" href={phone}>
 								<i className="fas fa-mobile-alt" title="Mobile icon" />
@@ -58,27 +59,27 @@ class MainPreview extends React.Component {
 						</li>
 						<li
 							id="email-li"
-							className="card__item-list-no-border card-user__email email"
+							className="card__item-list card-user__email email"
 						>
 							<a className="card__link-email" href={email}>
 								<i className="far fa-envelope" title="Email icon" />
 							</a>
 						</li>
-						<li id="linkedin-li" className="card__item-list-no-border linkedin">
+						<li id="linkedin-li" className="card__item-list linkedin">
 							<a 
 								className="card__link-linkedin" 
-								href={linkedin} 
+								href={`https://www.linkedin.com/in/${linkedin}`}
 								target="_blank" 
 								rel="noopener noreferrer"
 							>
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
 							</a>
 						</li>
-						<li id="github-li" className="card__item-list-no-border github">
+						<li id="github-li" className="card__item-list github">
 							<a
 								className="card__link-github"
 								id="gitHub-link"
-								href={github}
+								href={`https://github.com/${github}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>

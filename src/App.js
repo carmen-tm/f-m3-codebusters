@@ -10,6 +10,12 @@ class App extends React.Component {
     super(props)
     this.state = {
 			isAvatarDefault: true,
+			// circles:{
+			// 	phone: false,
+			// 	email: false,
+			// 	linkedin: false,
+			// 	github: false
+			// },
 			profile: {
 				palette: 1,
 				name: 'User name',
@@ -43,10 +49,10 @@ class App extends React.Component {
 		});
 	}
  
-  updateAvatar(imgage) {
+  updateAvatar(image) {
     const {profile} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, photo: imgage};
+      const newProfile = {...profile, photo: image};
       return {
         profile: newProfile,
         isAvatarDefault: false
@@ -61,6 +67,10 @@ class App extends React.Component {
 		//Need to set the state with callback as we want to keep the PrevState all the time (the other inputs info)
 		this.setState(prevState => {
 			return {
+				// circles: {
+				// 	...prevState.circles,
+				// 	[key]:true,
+				// },
 				profile: {
 					...prevState.profile,
 					[key]: value
@@ -110,7 +120,9 @@ class App extends React.Component {
   return (
     <div className="App">
 			<MainPage 
-			data={this.state.profile} 
+			data={this.state.profile}
+			// circles = {this.state.circles}
+			// methodCircles = {this.addColorCircles}
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
 			checked={this.state.profile.palette}

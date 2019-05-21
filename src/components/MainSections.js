@@ -9,6 +9,7 @@ class MainSections extends React.Component{
       <main className="main-sections__container">
         <MainPreview 
          data={this.props.data}
+         circles ={this.props.circles}
          color={this.props.color}
         />
         <MainForm  
