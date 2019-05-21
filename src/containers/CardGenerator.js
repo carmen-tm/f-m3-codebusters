@@ -15,9 +15,9 @@ class CardGenerator extends React.Component {
 				job: 'User job',
 				phone: '',
 				email: '',
-				linkedin: '#',
-				github: '#',
-				avatar: defaultImage,
+				linkedin: '',
+				github: '',
+				photo: defaultImage,
 				miniature: ''
 			},
 			palette : {
@@ -26,6 +26,7 @@ class CardGenerator extends React.Component {
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
+		this.updateAvatar = this.updateAvatar.bind(this);
 	}
 	
   handleColorChange(event){
@@ -40,10 +41,10 @@ class CardGenerator extends React.Component {
 		});
 	}
  
-  updateAvatar(img) {
+  updateAvatar(image) {
     const {profile} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = {...profile, photo: image};
       return {
         profile: newProfile,
         isAvatarDefault: false
