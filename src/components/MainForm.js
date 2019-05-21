@@ -39,7 +39,7 @@ class MainForm extends React.Component {
 					arrowId="arrow-share"
 					arrow="down"
 				>
-					<PanelShare twitter={this.props.twitter}/>
+					<PanelShare btnShare={this.props.btnShare} twitter={this.props.twitter}/>
 				</Fieldset>
 			</form>
 		);
