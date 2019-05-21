@@ -25,7 +25,7 @@ class App extends React.Component {
 				linkedin: '#',
 				github: '#',
 				photo: defaultImage,
-				miniature: "",
+				// miniature: "",
 			},
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
@@ -79,12 +79,12 @@ class App extends React.Component {
 		});
 	}
 
-	sendRequest(profile,buttonShare){
+	sendRequest(buttonShare){
 		buttonShare.disabled = true;
 		console.log(this.state.profile)
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
 			method: 'POST',
-			body: JSON.stringify(profile),
+			body: JSON.stringify(this.state.profile),
 			headers: {
 				'content-type': 'application/json'
 			},
@@ -96,7 +96,7 @@ class App extends React.Component {
 	handlerButtonShare(event){
 		const buttonShare = event.currentTarget;
 		console.log('1');
-		this.sendRequest(this.props.profile,buttonShare);
+		this.sendRequest(buttonShare);
 	}
 	
 	showURL(result) {
