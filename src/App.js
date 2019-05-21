@@ -27,7 +27,8 @@ class App extends React.Component {
 			},
 			palette: {
 				number: 1
-			}
+			},
+			contrInput: ''
 		};
 
 		//Bind all class methods
@@ -63,10 +64,8 @@ class App extends React.Component {
 	}
 
 	//Method to make all input texts Controllable Components
-	fillValueWithState(event) {
-		const key = event.currentTarget.name;
-		console.log(key);
-		const controlledValue = this.state.profile[key];
+	fillValueWithState() {
+		const controlledValue = this.state.contrInput;
 		console.log(controlledValue);
 		return controlledValue;
 	}
@@ -85,10 +84,11 @@ class App extends React.Component {
 				profile: {
 					...prevState.profile,
 					[key]: value
-				}
+				},
+				contrInput: value.toUpperCase()
 			};
 		});
-		// return key;
+		this.fillValueWithState();
 	}
 	// addColorCircles([key]){
 	// 	this.setState

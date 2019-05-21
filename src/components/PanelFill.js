@@ -31,6 +31,7 @@ class PanelFill extends React.Component {
 					inputName="job"
 					inputPlaceholders="Ex: Front-end unicorn"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 
 				<GetAvatar
@@ -59,6 +60,7 @@ class PanelFill extends React.Component {
 					inputName="email"
 					inputPlaceholders="Ex: sallyhill@gmail.com"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 
 				<Input
@@ -72,6 +74,7 @@ class PanelFill extends React.Component {
 					inputName="phone"
 					inputPlaceholders="Ex: 555-55-55-55"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 
 				<Input
@@ -85,6 +88,7 @@ class PanelFill extends React.Component {
 					inputName="linkedin"
 					inputPlaceholders="Ex: sally.hill"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 
 				<Input
@@ -98,6 +102,7 @@ class PanelFill extends React.Component {
 					inputName="github"
 					inputPlaceholders="Ex: sally-hill"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 			</section>
 		);
