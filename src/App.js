@@ -25,7 +25,7 @@ class App extends React.Component {
 				linkedin: '#',
 				github: '#',
 				photo: defaultImage,
-				// miniature: "",
+				miniature: "",
 			},
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
