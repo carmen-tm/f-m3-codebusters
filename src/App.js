@@ -18,11 +18,14 @@ class App extends React.Component {
 				email: '',
 				linkedin: '#',
 				github: '#',
-				avatar: defaultImage,
+				photo: defaultImage,
+				miniature: "",
 			},
     };
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
+		this.updateAvatar = this.updateAvatar.bind(this);
+
 		this.showURL = this.showURL.bind(this);
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
@@ -40,16 +43,17 @@ class App extends React.Component {
 		});
 	}
  
-  updateAvatar(img) {
+  updateAvatar(imgage) {
     const {profile} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = {...profile, photo: imgage};
       return {
         profile: newProfile,
         isAvatarDefault: false
       }
     });
-  }
+	}
+	
   handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -76,7 +80,7 @@ class App extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(function (result) { this.showURL(result); })
+		.then(function (result) { console.log(result); })
 		.catch(function (error) { console.log(error); });
 	}
 	handlerButtonShare(event){
@@ -100,7 +104,7 @@ class App extends React.Component {
     // } else {
     //     responseURL.innerHTML = 'ERROR:' + result.error;
     // }
-}
+	}
   render(){
 
   return (
