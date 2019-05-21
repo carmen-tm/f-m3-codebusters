@@ -11,6 +11,7 @@ class CardGenerator extends React.Component {
     this.state = {
 			isAvatarDefault: true,
 			profile: {
+				palette: 1,
 				name: 'User name',
 				job: 'User job',
 				phone: '',
@@ -20,22 +21,22 @@ class CardGenerator extends React.Component {
 				photo: defaultImage,
 				miniature: ''
 			},
-			palette : {
-				number: 1,
-			}
     };
-		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
+		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
+		this.sendRequest = this.sendRequest.bind(this);
+		this.handlerButtonShare = this.handlerButtonShare.bind(this);
+
 	}
 	
-  handleColorChange(event){
+	handleColorChange(event){
 		const {value} = event.currentTarget;
 		this.setState(prevState => {
 			return {
-				palette:{
-					...prevState.palette,
-				 number: value,
+				profile:{
+					...prevState.profile,
+				 palette: value,
 				}
 			}
 		});
@@ -51,6 +52,7 @@ class CardGenerator extends React.Component {
       }
     });
   }
+	
   handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -65,6 +67,28 @@ class CardGenerator extends React.Component {
 			};
 		});
 	}
+
+	sendRequest(buttonShare){
+		buttonShare.disabled = true;
+		console.log(this.state.profile)
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+			method: 'POST',
+			body: JSON.stringify(this.state.profile),
+			headers: {
+				'content-type': 'application/json'
+			},
+    })
+		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
+		.then(function (result) { console.log(result); })
+		.catch(function (error) { console.log(error); });
+	}
+
+	handlerButtonShare(event){
+		const buttonShare = event.currentTarget;
+		console.log('hi')
+		this.sendRequest(buttonShare);
+	}
+  
   render(){
 
   return (
@@ -73,9 +97,10 @@ class CardGenerator extends React.Component {
 			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
-			checked={this.state.palette.number}
-			color={this.state.palette.number}
+			checked={this.state.profile.palette}
+			color={this.state.profile.palette}
 			updateAvatar={this.updateAvatar}
+			btnShare={this.handlerButtonShare}
 			/>
     </div>
   );}
