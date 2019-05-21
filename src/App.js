@@ -14,9 +14,11 @@ class App extends React.Component {
 			// 	linkedin: false,
 			// 	github: false
 			// },
+
+			//We need the object to be EMPTY, so the initial values of the controllable inputs are empty too
 			profile: {
-				name: 'User name',
-				job: 'User job',
+				name: '',
+				job: '',
 				phone: '',
 				email: '',
 				emailIsFilled: '',
