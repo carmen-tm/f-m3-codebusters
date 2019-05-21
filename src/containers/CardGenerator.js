@@ -1,7 +1,7 @@
 import React from 'react';
-import MainPage from './components/MainPage.js';
-import './stylesheets/CardGenerator.scss';
-import defaultImage from './assets/defaultImage';
+import MainPage from '../components/MainPage.js';
+import '../stylesheets/CardGenerator.scss';
+import defaultImage from '../assets/defaultImage';
 
 
 
