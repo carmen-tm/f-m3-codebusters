@@ -27,7 +27,7 @@ class Input extends React.Component {
 					id={inputId}
 					name={inputName}
 					placeholder={inputPlaceholders}
-					// value={this.fillValueWithState()}
+					value={this.props.methodInputText}
 					required
 				/>
 			</div>

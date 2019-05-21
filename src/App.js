@@ -50,13 +50,6 @@ class App extends React.Component {
 			};
 		});
 	}
-	//TODO
-	fillValueWithState(event) {
-		const key = event.currentTarget.name;
-		const controlledValue = this.state.userInfo[key];
-		console.log(controlledValue);
-		return controlledValue;
-	}
 
 	updateAvatar(image) {
 		const { profile } = this.state;
@@ -68,6 +61,16 @@ class App extends React.Component {
 			};
 		});
 	}
+
+	//Method to make all input texts Controllable Components
+	fillValueWithState(event) {
+		const key = event.currentTarget.name;
+		console.log(key);
+		const controlledValue = this.state.profile[key];
+		console.log(controlledValue);
+		return controlledValue;
+	}
+
 	handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -85,6 +88,7 @@ class App extends React.Component {
 				}
 			};
 		});
+		// return key;
 	}
 	// addColorCircles([key]){
 	// 	this.setState
@@ -100,7 +104,7 @@ class App extends React.Component {
 					// circles = {this.state.circles}
 					// methodCircles = {this.addColorCircles}
 					methodInputText={this.handleInputsOnChange}
-					methodValueText={this.fillValueWithState}
+					methodContrValue={this.fillValueWithState}
 					methodColorChange={this.handleColorChange}
 					checked={this.state.palette.number}
 					color={this.state.palette.number}

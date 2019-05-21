@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './Input';
-import GetAvatar from './GetAvatar'
+import GetAvatar from './GetAvatar';
 
 class PanelFill extends React.Component {
 	render() {
@@ -17,6 +17,7 @@ class PanelFill extends React.Component {
 					inputName="name"
 					inputPlaceholders="Ex: Sally Hill"
 					methodInputText={this.props.methodInputText}
+					methodContrValue={this.props.methodContrValue}
 				/>
 
 				<Input
