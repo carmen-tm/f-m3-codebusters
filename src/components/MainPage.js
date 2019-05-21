@@ -11,7 +11,7 @@ class MainPage extends React.Component {
 				<MainSections
 					data={this.props.data}
 					methodInputText={this.props.methodInputText}
-					methodContrValue={this.props.methodContrValue}
+					profileObject={this.props.profileObject}
 					methodColorChange={this.props.methodColorChange}
 					checked={this.props.checked}
 					color={this.props.color}

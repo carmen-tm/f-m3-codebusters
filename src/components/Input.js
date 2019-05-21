@@ -27,7 +27,7 @@ class Input extends React.Component {
 					id={inputId}
 					name={inputName}
 					placeholder={inputPlaceholders}
-					value={this.props.methodContrValue}
+					value={this.props.profileObject}
 					required
 				/>
 			</div>

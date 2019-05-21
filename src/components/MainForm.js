@@ -30,7 +30,7 @@ class MainForm extends React.Component {
 				>
 					<PanelFill
 						methodInputText={this.props.methodInputText}
-						methodContrValue={this.props.methodContrValue}
+						profileObject={this.props.profileObject}
 						updateAvatar={this.props.updateAvatar}
 					/>
 				</Fieldset>

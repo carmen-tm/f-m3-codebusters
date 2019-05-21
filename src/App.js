@@ -27,12 +27,10 @@ class App extends React.Component {
 			},
 			palette: {
 				number: 1
-			},
-			contrInput: ''
+			}
 		};
 
 		//Bind all class methods
-		this.fillValueWithState = this.fillValueWithState.bind(this);
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
@@ -63,13 +61,6 @@ class App extends React.Component {
 		});
 	}
 
-	//Method to make all input texts Controllable Components
-	fillValueWithState() {
-		const controlledValue = this.state.contrInput;
-		console.log(controlledValue);
-		return controlledValue;
-	}
-
 	handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
@@ -84,11 +75,9 @@ class App extends React.Component {
 				profile: {
 					...prevState.profile,
 					[key]: value
-				},
-				contrInput: value.toUpperCase()
+				}
 			};
 		});
-		this.fillValueWithState();
 	}
 	// addColorCircles([key]){
 	// 	this.setState
@@ -104,7 +93,7 @@ class App extends React.Component {
 					// circles = {this.state.circles}
 					// methodCircles = {this.addColorCircles}
 					methodInputText={this.handleInputsOnChange}
-					methodContrValue={this.fillValueWithState}
+					profileObject={this.state.profile}
 					methodColorChange={this.handleColorChange}
 					checked={this.state.palette.number}
 					color={this.state.palette.number}

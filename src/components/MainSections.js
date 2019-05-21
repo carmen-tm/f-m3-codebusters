@@ -14,7 +14,7 @@ class MainSections extends React.Component {
 				/>
 				<MainForm
 					methodInputText={this.props.methodInputText}
-					methodContrValue={this.props.methodContrValue}
+					profileObject={this.props.profileObject}
 					methodColorChange={this.props.methodColorChange}
 					checked={this.props.checked}
 					updateAvatar={this.props.updateAvatar}
