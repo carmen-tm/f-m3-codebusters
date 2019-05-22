@@ -7,11 +7,6 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <header className="main__header">
-            <a className="header__link" href="index.html">
-            <img className="header__image" src={AppLogo} alt="Awesome profile-cards logo"></img>
-            </a>
-        </header> 
         <main className="landing__container">
           <img
             className="landing__hero"
