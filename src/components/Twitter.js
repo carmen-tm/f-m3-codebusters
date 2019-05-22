@@ -1,10 +1,9 @@
 import React from 'react';
 
 class Twitter extends React.Component {
-render(){
-    return
+	render() {
+		return;
+	}
 }
 
-}
-
-export default Twitter
+export default Twitter;
