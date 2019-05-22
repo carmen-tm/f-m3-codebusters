@@ -2,33 +2,33 @@ import React from 'react';
 
 class GetAvatar extends React.Component {
 	constructor(props) {
-    super(props);
+		super(props);
 
-    this.fr = new FileReader();
-    this.myFileField = React.createRef();
-    
-    this.handleFilePicker = this.handleFilePicker.bind(this);
-    this.uploadImage = this.uploadImage.bind(this);
-    this.getImage = this.getImage.bind(this);
+		this.fr = new FileReader();
+		this.myFileField = React.createRef();
+
+		this.handleFilePicker = this.handleFilePicker.bind(this);
+		this.uploadImage = this.uploadImage.bind(this);
+		this.getImage = this.getImage.bind(this);
 	}
 	handleFilePicker() {
-    this.myFileField.current.click(); 
-  }
+		this.myFileField.current.click();
+	}
 
-  uploadImage(e){
-    const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
-    this.fr.readAsDataURL(myFile);
-  }
+	uploadImage(e) {
+		const myFile = e.currentTarget.files[0];
+		this.fr.addEventListener('load', this.getImage);
+		this.fr.readAsDataURL(myFile);
+	}
 
-  getImage() {
-    const image = this.fr.result;
-    this.props.updateAvatar(image);
-  }
+	getImage() {
+		const image = this.fr.result;
+		this.props.updateAvatar(image);
+	}
 
-  getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
-  }
+	getPreview(isDefault, image) {
+		return !isDefault ? { backgroundImage: `url(${image})` } : {};
+	}
 	render() {
 		const {
 			divClassName,
@@ -48,17 +48,31 @@ class GetAvatar extends React.Component {
 
 		return (
 			<div className={divClassName}>
-				<label className={labelClassName} for={labelFor}>
+				<label className={labelClassName} htmlFor={labelFor}>
 					{labelInnerText}
 				</label>
 
-				<button type={btnType} className={btnClassName} src={btnSrc} onClick={this.handleFilePicker}>
+				<button
+					type={btnType}
+					className={btnClassName}
+					src={btnSrc}
+					onClick={this.handleFilePicker}
+				>
 					{btnInnerText}
 				</button>
 
-				<div className={divPreviewClassName} style={this.getPreview(isAvatarDefault, photo)}/>
+				<div
+					className={divPreviewClassName}
+					style={this.getPreview(isAvatarDefault, photo)}
+				/>
 
-				<input type={inputType} className={inputClassName} value={''} ref={this.myFileField} onChange={this.uploadImage}/>
+				<input
+					type={inputType}
+					className={inputClassName}
+					value={''}
+					ref={this.myFileField}
+					onChange={this.uploadImage}
+				/>
 			</div>
 		);
 	}
