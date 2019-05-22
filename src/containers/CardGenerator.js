@@ -34,6 +34,10 @@ class CardGenerator extends React.Component {
 		localStorage.setItem('filledForm', JSON.stringify(this.state.profile))
 	}
 
+	componentDidUpdate () {
+		this.storeinLocaStorage ();
+	}
+
 	handleColorChange(event) {
 		const { value } = event.currentTarget;
 		this.setState(prevState => {
