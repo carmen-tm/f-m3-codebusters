@@ -72,7 +72,6 @@ class CardGenerator extends React.Component {
 
 	sendRequest(buttonShare){
 		buttonShare.disabled = true;
-		console.log(this.state.profile)
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
 			method: 'POST',
 			body: JSON.stringify(this.state.profile),
@@ -81,13 +80,12 @@ class CardGenerator extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(function (result) { this.setState({twitter: true, url: result}); })
+		.then(result => { this.setState({twitter: true, url: result.cardURL}); })
 		.catch(function (error) { console.log(error); });
 	}
 
 	handlerButtonShare(event){
 		const buttonShare = event.currentTarget;
-		console.log('hi')
 		this.sendRequest(buttonShare);
 	}
   
@@ -104,6 +102,7 @@ class CardGenerator extends React.Component {
 			updateAvatar={this.updateAvatar}
 			twitter={this.state.twitter}
 			btnShare={this.handlerButtonShare}
+			urlCard={this.state.url}
 			/>
     </div>
   );}

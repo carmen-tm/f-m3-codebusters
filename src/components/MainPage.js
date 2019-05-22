@@ -18,6 +18,7 @@ class MainPage extends React.Component {
           updateAvatar={this.props.updateAvatar}
           twitter={this.props.twitter}
           btnShare={this.props.btnShare}
+          urlCard={this.props.urlCard}
         />
         <MainFooter />
       </div>
