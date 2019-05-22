@@ -21,11 +21,17 @@ class CardGenerator extends React.Component {
 				miniature: ''
 			}
 		};
+		this.storeinLocaStorage = this.storeinLocaStorage.bind(this); 
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
+
+		this.storeinLocaStorage();
+	}
+	storeinLocaStorage (){
+		localStorage.setItem('filledForm', JSON.stringify(this.state.profile))
 	}
 
 	handleColorChange(event) {
