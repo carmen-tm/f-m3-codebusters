@@ -25,11 +25,15 @@ function changeClassColorList(value){
 	 classIcons += 'gray-palette';
 	 return classIcons}
 }
+function displayDefaultName(){
+	const stateValue = this.props.data.name;
+	return !stateValue ? 'User name' : stateValue;
+}
 
 
 class MainPreview extends React.Component {
 	render() {
-		const {name,job,phone,email,linkedin,github, photo} = this.props.data;
+		const {phone,email,linkedin,github, photo} = this.props.data;
 		const {color} =this.props;
 		return (
 			<section className="main-preview__container">
@@ -40,8 +44,8 @@ class MainPreview extends React.Component {
 
 				<div className="card-user__container card__container">
 					<div className={changeClassColorTitle(color)}>
-						<h2 className="card-user__name">{name}</h2>
-						<h3 className="card-user__job">{job}</h3>
+						<h2 className="card-user__name">{displayDefaultName}</h2>
+						<h3 className="card-user__job">{this.displayDefault}</h3>
 					</div>
 				</div>
 
