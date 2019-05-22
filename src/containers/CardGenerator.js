@@ -22,6 +22,7 @@ class CardGenerator extends React.Component {
 				miniature: ''
 			},
 			twitter: false,
+			url:'',
     };
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
@@ -80,7 +81,7 @@ class CardGenerator extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(function (result) { console.log(result); })
+		.then(function (result) { this.setState({twitter: true, url: result}); })
 		.catch(function (error) { console.log(error); });
 	}
 
