@@ -19,8 +19,10 @@ class CardGenerator extends React.Component {
 				github: '',
 				photo: defaultImage,
 				miniature: ''
-			}
-		};
+			},
+			twitter: false,
+			url:'',
+    };
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
@@ -68,47 +70,39 @@ class CardGenerator extends React.Component {
 
 	sendRequest(buttonShare) {
 		buttonShare.disabled = true;
-		console.log(this.state.profile);
-		fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
 			method: 'POST',
 			body: JSON.stringify(this.state.profile),
 			headers: {
 				'content-type': 'application/json'
-			}
-		})
-			.then(function(resp) {
-				buttonShare.disabled = false;
-				return resp.json();
-			})
-			.then(function(result) {
-				console.log(result);
-			})
-			.catch(function(error) {
-				console.log(error);
-			});
+			},
+    })
+		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
+		.then(result => { this.setState({twitter: true, url: result.cardURL}); })
+		.catch(function (error) { console.log(error); });
 	}
 
 	handlerButtonShare(event) {
 		const buttonShare = event.currentTarget;
-		console.log('hi');
 		this.sendRequest(buttonShare);
 	}
 
-	render() {
-		return (
-			<div className="App">
-				<MainPage
-					data={this.state.profile}
-					methodInputText={this.handleInputsOnChange}
-					profileObject={this.state.profile}
-					methodColorChange={this.handleColorChange}
-					checked={this.state.profile.palette}
-					color={this.state.profile.palette}
-					updateAvatar={this.updateAvatar}
-					btnShare={this.handlerButtonShare}
-				/>
-			</div>
-		);
-	}
+	render(){
+  return (
+    <div className="App">
+			<MainPage 
+			data={this.state.profile} 
+			methodInputText={this.handleInputsOnChange} 
+			methodColorChange={this.handleColorChange} 
+			checked={this.state.profile.palette}
+			color={this.state.profile.palette}
+			updateAvatar={this.updateAvatar}
+			twitter={this.state.twitter}
+			btnShare={this.handlerButtonShare}
+			urlCard={this.state.url}
+			/>
+    </div>
+	);
+}
 }
 export default CardGenerator;
