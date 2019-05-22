@@ -30,7 +30,6 @@ class CardGenerator extends React.Component {
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
 
-		this.storeinLocaStorage();
 	}
 	storeinLocaStorage (){
 		localStorage.setItem('filledForm', JSON.stringify(this.state.profile))
