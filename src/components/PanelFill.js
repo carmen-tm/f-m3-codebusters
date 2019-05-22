@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './Input';
-import GetAvatar from './GetAvatar'
+import GetAvatar from './GetAvatar';
 
 class PanelFill extends React.Component {
 	render() {
@@ -17,6 +17,7 @@ class PanelFill extends React.Component {
 					inputName="name"
 					inputPlaceholders="Ex: Sally Hill"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.name}
 				/>
 
 				<Input
@@ -30,6 +31,7 @@ class PanelFill extends React.Component {
 					inputName="job"
 					inputPlaceholders="Ex: Front-end unicorn"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.job}
 				/>
 
 				<GetAvatar
@@ -58,6 +60,7 @@ class PanelFill extends React.Component {
 					inputName="email"
 					inputPlaceholders="Ex: sallyhill@gmail.com"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.email}
 				/>
 
 				<Input
@@ -71,6 +74,7 @@ class PanelFill extends React.Component {
 					inputName="phone"
 					inputPlaceholders="Ex: 555-55-55-55"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.tel}
 				/>
 
 				<Input
@@ -84,6 +88,7 @@ class PanelFill extends React.Component {
 					inputName="linkedin"
 					inputPlaceholders="Ex: sally.hill"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.linkedin}
 				/>
 
 				<Input
@@ -97,6 +102,7 @@ class PanelFill extends React.Component {
 					inputName="github"
 					inputPlaceholders="Ex: sally-hill"
 					methodInputText={this.props.methodInputText}
+					profileObject={this.props.profileObject.github}
 				/>
 			</section>
 		);

@@ -3,7 +3,6 @@ import MainSections from './MainSections';
 import MainHeader from './MainHeader';
 import MainFooter from './MainFooter';
 
-
 class MainPage extends React.Component {
   render() {
     return (

@@ -1,43 +1,49 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AppLogo from '../images/AppLogo.svg';
+import AdaLogo from '../images/AdaLogo.png';
 
 class Landing extends Component {
   render() {
     return (
       <div>
-        <header class="main__header">
-            <a class="header__link" href="index.html">
-            <img class="header__image" src="assets/images/Awesome-profile-cards.svg" alt="Awesome profile-cards logo"></img>
-            </a>
-        </header> 
-        <main class="landing__container">
+        <main className="landing__container">
           <img
-            class="landing__hero"
-            src="assets/images/Awesome-profile-cards.svg"
+            className="landing__hero"
+            src={AppLogo}
             alt="Awesome Profile Cards Logo"
           />
-          <h1 class="landing__title">Create your visit card</h1>
-          <h2 class="landing__subtitle">
+          <h1 className="landing__title">Create your visit card</h1>
+          <h2 className="landing__subtitle">
             Create better professional contacts easily and comfortably
           </h2>
-          <ul class="landing__list">
-            <li class="item__list">
-              <i class="far fa-object-ungroup icon" title="Design icon" />
+          <ul className="landing__list">
+            <li className="item__list">
+              <i className="far fa-object-ungroup icon" title="Design icon" />
               Design
             </li>
-            <li class="item__list">
-              <i class="far fa-keyboard icon" title="Complete icon" />
+            <li className="item__list">
+              <i className="far fa-keyboard icon" title="Complete icon" />
               Complete
             </li>
-            <li class="item__list">
-              <i class="fas fa-share-alt icon" title="Share icon" />
+            <li className="item__list">
+              <i className="fas fa-share-alt icon" title="Share icon" />
               Share
             </li>
           </ul>
-          <a class="landing__link" href="main-page.html">
+          <a className="landing__link" href="main-page.html">
             <Link to = "/card-generator">Start</Link>
           </a>
         </main>
+        <footer className="footer">
+        <small className="copyright">Awesome profile-cards @2019</small>
+        <div className="logo-container">
+            <img className="logo-frontNerds" src={AppLogo} alt="Adalab"/>
+            <a href="https://adalab.es/" target="_blank" rel="noopener noreferrer" className="logo-adalab__link">
+                <img className="logo-adalab" src={AdaLogo} alt="Adalab"/>
+            </a>
+        </div>
+        </footer>
       </div>
     );
   }

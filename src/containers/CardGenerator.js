@@ -3,17 +3,16 @@ import MainPage from '../components/MainPage.js';
 import '../stylesheets/CardGenerator.scss';
 import defaultImage from '../assets/defaultImage';
 
-
-
 class CardGenerator extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
+	constructor(props) {
+		super(props);
+		this.state = {
 			isAvatarDefault: true,
+			//We need the object to be EMPTY, so the initial values of the controllable inputs are empty too
 			profile: {
+				name: '',
+				job: '',
 				palette: 1,
-				name: 'User name',
-				job: 'User job',
 				phone: '',
 				email: '',
 				linkedin: '',
@@ -29,33 +28,32 @@ class CardGenerator extends React.Component {
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
-
 	}
-	
-	handleColorChange(event){
-		const {value} = event.currentTarget;
+
+	handleColorChange(event) {
+		const { value } = event.currentTarget;
 		this.setState(prevState => {
 			return {
-				profile:{
+				profile: {
 					...prevState.profile,
-				 palette: value,
+					palette: value
 				}
-			}
+			};
 		});
 	}
- 
-  updateAvatar(image) {
-    const {profile} = this.state;
-    this.setState(prevState => {
-      const newProfile = {...profile, photo: image};
-      return {
-        profile: newProfile,
-        isAvatarDefault: false
-      }
-    });
-  }
-	
-  handleInputsOnChange(event) {
+
+	updateAvatar(image) {
+		const { profile } = this.state;
+		this.setState(prevState => {
+			const newProfile = { ...profile, photo: image };
+			return {
+				profile: newProfile,
+				isAvatarDefault: false
+			};
+		});
+	}
+
+	handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
 
@@ -70,7 +68,7 @@ class CardGenerator extends React.Component {
 		});
 	}
 
-	sendRequest(buttonShare){
+	sendRequest(buttonShare) {
 		buttonShare.disabled = true;
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
 			method: 'POST',
@@ -84,13 +82,12 @@ class CardGenerator extends React.Component {
 		.catch(function (error) { console.log(error); });
 	}
 
-	handlerButtonShare(event){
+	handlerButtonShare(event) {
 		const buttonShare = event.currentTarget;
 		this.sendRequest(buttonShare);
 	}
-  
-  render(){
 
+	render(){
   return (
     <div className="App">
 			<MainPage 
@@ -105,6 +102,7 @@ class CardGenerator extends React.Component {
 			urlCard={this.state.url}
 			/>
     </div>
-  );}
+	);
+}
 }
 export default CardGenerator;
