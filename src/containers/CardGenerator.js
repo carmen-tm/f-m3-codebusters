@@ -9,7 +9,7 @@ class CardGenerator extends React.Component {
 		this.state = {
 			isAvatarDefault: true,
 			//We need the object to be EMPTY, so the initial values of the controllable inputs are empty too
-			profile: {
+			profile: (JSON.parse(localStorage.getItem('filledForm')))||({
 				name: '',
 				job: '',
 				palette: 1,
@@ -20,7 +20,9 @@ class CardGenerator extends React.Component {
 				photo: defaultImage,
 				miniature: ''
 			}
-		};
+			)
+		}
+
 		this.storeinLocaStorage = this.storeinLocaStorage.bind(this); 
 		this.handleColorChange = this.handleColorChange.bind(this);
 		this.updateAvatar = this.updateAvatar.bind(this);
