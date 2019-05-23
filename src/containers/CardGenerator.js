@@ -67,8 +67,6 @@ class CardGenerator extends React.Component {
 	handleInputsOnChange(event) {
 		const key = event.currentTarget.name;
 		const value = event.currentTarget.value;
-
-		//Need to set the state with callback as we want to keep the PrevState all the time (the other inputs info)
 		this.setState(prevState => {
 			return {
 				profile: {

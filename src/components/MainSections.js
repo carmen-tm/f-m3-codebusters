@@ -9,7 +9,6 @@ class MainSections extends React.Component {
 				<MainPreview
 					defaultProfile={this.props.defaultProfile}
 					data={this.props.data}
-					circles={this.props.circles}
 					color={this.props.color}
 				/>
 				<MainForm
