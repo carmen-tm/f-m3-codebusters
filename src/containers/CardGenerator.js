@@ -12,16 +12,16 @@ class CardGenerator extends React.Component {
 				defaultName: 'User name',
 				defaultJob: 'User job'
 			},
-			profile: {
-				name: '',
-				job: '',
-				palette: 1,
-				phone: '',
-				email: '',
-				linkedin: '',
-				github: '',
-				photo: defaultImage,
-				miniature: ''
+			profile: JSON.parse(localStorage.getItem('filledForm'))|| {
+					name: '',
+					job: '',
+					palette: 1,
+					phone: '',
+					email: '',
+					linkedin: '',
+					github: '',
+					photo: defaultImage,
+					miniature: ''
 			},
 			url:'',
     };
@@ -30,6 +30,15 @@ class CardGenerator extends React.Component {
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
+		this.storeinLocalStorage = this.storeinLocalStorage.bind(this);
+	}
+
+	storeinLocalStorage(){
+		localStorage.setItem('filledForm', JSON.stringify(this.state.profile))
+	}
+
+	componentDidUpdate(){
+		this.storeinLocalStorage();
 	}
 
 	handleColorChange(event) {
