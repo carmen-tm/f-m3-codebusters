@@ -12,18 +12,17 @@ class CardGenerator extends React.Component {
 				defaultName: 'User name',
 				defaultJob: 'User job'
 			},
-			profile: {
-				name: '',
-				job: '',
-				palette: 1,
-				phone: '',
-				email: '',
-				linkedin: '',
-				github: '',
-				photo: defaultImage,
-				miniature: ''
+			profile: JSON.parse(localStorage.getItem('filledForm'))|| {
+					name: '',
+					job: '',
+					palette: 1,
+					phone: '',
+					email: '',
+					linkedin: '',
+					github: '',
+					photo: defaultImage,
+					miniature: ''
 			},
-			twitter: false,
 			url:'',
     };
 		this.handleColorChange = this.handleColorChange.bind(this);
@@ -31,6 +30,15 @@ class CardGenerator extends React.Component {
 		this.handleInputsOnChange = this.handleInputsOnChange.bind(this);
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
+		this.storeinLocalStorage = this.storeinLocalStorage.bind(this);
+	}
+
+	storeinLocalStorage(){
+		localStorage.setItem('filledForm', JSON.stringify(this.state.profile))
+	}
+
+	componentDidUpdate(){
+		this.storeinLocalStorage();
 	}
 
 	handleColorChange(event) {
@@ -79,7 +87,7 @@ class CardGenerator extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(result => { this.setState({twitter: true, url: result.cardURL}); })
+		.then(result => {this.setState({url: result.cardURL, success: result.success,messageError: result.error}); })
 		.catch(function (error) { console.log(error); });
 	}
 
@@ -99,7 +107,8 @@ class CardGenerator extends React.Component {
 			checked={this.state.profile.palette}
 			color={this.state.profile.palette}
 			updateAvatar={this.updateAvatar}
-			twitter={this.state.twitter}
+			messageError={this.state.messageError}
+			success={this.state.success}
 			btnShare={this.handlerButtonShare}
 			urlCard={this.state.url}
 			profileObject={this.state.profile}
