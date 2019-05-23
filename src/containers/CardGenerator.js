@@ -8,7 +8,10 @@ class CardGenerator extends React.Component {
 		super(props);
 		this.state = {
 			isAvatarDefault: true,
-			//We need the object to be EMPTY, so the initial values of the controllable inputs are empty too
+			defaultProfile:{
+				defaultName: 'User name',
+				defaultJob: 'User job'
+			},
 			profile: {
 				name: '',
 				job: '',
@@ -91,6 +94,7 @@ class CardGenerator extends React.Component {
   return (
     <div className="App">
 			<MainPage 
+			defaultProfile={this.state.defaultProfile}
 			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 

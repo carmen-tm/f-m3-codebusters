@@ -28,9 +28,28 @@ function changeClassColorList(value){
 
 
 class MainPreview extends React.Component {
+	displayDefaultName(){
+		const {defaultName}=this.props.defaultProfile;
+		const {name}=this.props.data;
+		if (!name){
+			return defaultName
+		}else{
+			return name
+		}
+	}
+	displayDefaultJob(){
+		const {defaultJob}=this.props.defaultProfile;
+		const {job}=this.props.data;
+		if (!job){
+			return defaultJob
+		}else{
+			return job
+		}
+	}
 	render() {
-		const {name,job,phone,email,linkedin,github, photo} = this.props.data;
+		const {phone,email,linkedin,github, photo} = this.props.data;
 		const {color} =this.props;
+
 		return (
 			<section className="main-preview__container">
 				<button className="reset__btn">
@@ -40,8 +59,8 @@ class MainPreview extends React.Component {
 
 				<div className="card-user__container card__container">
 					<div className={changeClassColorTitle(color)}>
-						<h2 className="card-user__name">{name}</h2>
-						<h3 className="card-user__job">{job}</h3>
+						<h2 className="card-user__name">{this.displayDefaultName()}</h2>
+						<h3 className="card-user__job">{this.displayDefaultJob()}</h3>
 					</div>
 				</div>
 
