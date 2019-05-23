@@ -2,7 +2,7 @@ import React from 'react';
 
 class PanelShare extends React.Component {
   render () {
-    const {btnShare, urlCard, twitter} = this.props;
+    const {btnShare, urlCard, messageError, success} = this.props;
     const shareTwitterLink =
       'https://twitter.com/intent/tweet?text=My awesome profile card: ' +
       urlCard;
@@ -12,11 +12,11 @@ class PanelShare extends React.Component {
         <button type="button" className="btn btn-share" onClick={btnShare}>
           <i className="far fa-address-card icon-btn" /> Create your card
         </button>
-        <p className="response">{urlCard}</p>
+        <p className="response">{success ? urlCard : messageError}</p>
         <a
           href={shareTwitterLink}
           className={
-            twitter
+            success
               ? 'twitter__link btn-twitter'
               : 'twitter__link btn-twitter hidden'
           }

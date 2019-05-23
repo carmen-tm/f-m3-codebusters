@@ -20,7 +20,6 @@ class CardGenerator extends React.Component {
 				photo: defaultImage,
 				miniature: ''
 			},
-			twitter: false,
 			url:'',
     };
 		this.handleColorChange = this.handleColorChange.bind(this);
@@ -78,7 +77,7 @@ class CardGenerator extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(result => {this.setState({twitter: true, url: result.cardURL, success: result.success}); })
+		.then(result => {this.setState({url: result.cardURL, success: result.success,messageError: result.error}); })
 		.catch(function (error) { console.log(error); });
 	}
 
@@ -97,7 +96,8 @@ class CardGenerator extends React.Component {
 			checked={this.state.profile.palette}
 			color={this.state.profile.palette}
 			updateAvatar={this.updateAvatar}
-			twitter={this.state.twitter}
+			messageError={this.state.messageError}
+			success={this.state.success}
 			btnShare={this.handlerButtonShare}
 			urlCard={this.state.url}
 			profileObject={this.state.profile}

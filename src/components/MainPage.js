@@ -15,7 +15,8 @@ class MainPage extends React.Component {
           checked={this.props.checked}
           color={this.props.color}
           updateAvatar={this.props.updateAvatar}
-          twitter={this.props.twitter}
+          messageError={this.props.messageError}
+          success={this.props.success}
           btnShare={this.props.btnShare}
           urlCard={this.props.urlCard}
           profileObject={this.props.profileObject}
