@@ -10,6 +10,10 @@ class CardGenerator extends React.Component {
     super(props)
     this.state = {
 			isAvatarDefault: true,
+			defaultProfile:{
+				defaultName: 'User name',
+				defaultJob: 'User job'
+			},
 			profile: {
 				name: 'User name',
 				job: 'User job',
@@ -70,6 +74,7 @@ class CardGenerator extends React.Component {
   return (
     <div className="App">
 			<MainPage 
+			defaultProfile={this.state.defaultProfile}
 			data={this.state.profile} 
 			methodInputText={this.handleInputsOnChange} 
 			methodColorChange={this.handleColorChange} 
