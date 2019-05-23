@@ -2,6 +2,7 @@ import React from 'react';
 
 class PanelColors extends React.Component {
 	render() {
+        const methodColorChange = this.props.methodColorChange;
 		return (
 			<section id="section-design" className="design panel">
 				<p className="section__title">Colors</p>
@@ -11,9 +12,10 @@ class PanelColors extends React.Component {
 						<input
 							id="palette--blue-green"
 							type="radio"
-							checked
-							value="1"
-							name="colors"
+							checked={parseInt(this.props.checked)=== 1}
+							value= {1}
+                            name="colors"
+                            onChange ={methodColorChange}
 						/>
 						<div className="palette__container">
 							<div className="sample-color blue-green--1" />
@@ -26,8 +28,10 @@ class PanelColors extends React.Component {
 						<input
 							id="palette--red-orange"
 							type="radio"
-							value="2"
-							name="colors"
+							value= {2}
+                            name="colors"
+                            onChange ={methodColorChange}
+                            checked={parseInt(this.props.checked)=== 2}
 						/>
 						<div className="palette__container">
 							<div className="sample-color red-orange--1" />
@@ -40,8 +44,10 @@ class PanelColors extends React.Component {
 						<input
 							id="palette--blue-gray"
 							type="radio"
-							value="3"
-							name="colors"
+							value= {3}
+                            name="colors"
+                            onChange ={methodColorChange}
+                            checked={parseInt(this.props.checked)=== 3}
 						/>
 						<div className="palette__container">
 							<div className="sample-color blue-gray--1" />

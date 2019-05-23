@@ -1,26 +1,6 @@
 import React from 'react';
 
 class Input extends React.Component {
-	constructor(props) {
-		super(props);
-		//Here we set the initial values (default texts rendered on the preview card)
-
-
-		//Bind all class methods
-	
-		this.fillValueWithState = this.fillValueWithState.bind(this);
-	}
-
-	//Methods:
-	
-
-	fillValueWithState(event) {
-		// const key = event.currentTarget.name;
-		// const controlledValue = this.state.userInfo[key];
-		// console.log(controlledValue);
-		// return controlledValue;
-	}
-
 	render() {
 		const {
 			divClassName,
@@ -31,7 +11,7 @@ class Input extends React.Component {
 			inputType,
 			inputId,
 			inputName,
-			inputPlaceholder
+			inputPlaceholders
 		} = this.props;
 
 		return (
@@ -46,8 +26,8 @@ class Input extends React.Component {
 					type={inputType}
 					id={inputId}
 					name={inputName}
-					placeholder={inputPlaceholder}
-					// value={this.fillValueWithState()}
+					placeholder={inputPlaceholders}
+					value={this.props.profileObject}
 					required
 				/>
 			</div>
