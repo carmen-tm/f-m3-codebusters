@@ -25,11 +25,11 @@ function changeClassColorList(value){
 	 classIcons += 'gray-palette';
 	 return classIcons}
 }
-function displayDefaultName(){
-	const stateValue = this.props.data.name;
-	return !stateValue ? 'User name' : stateValue;
-}
 
+// function displayDefaultName(){me da error porque las props sólo funcionan dentro de la clase.
+// 	return !stateValue ? 'User name' : stateValue;
+// }
+// this.displayDefault();
 
 class MainPreview extends React.Component {
 	render() {
@@ -44,8 +44,8 @@ class MainPreview extends React.Component {
 
 				<div className="card-user__container card__container">
 					<div className={changeClassColorTitle(color)}>
-						<h2 className="card-user__name">{displayDefaultName}</h2>
-						<h3 className="card-user__job">{this.displayDefault}</h3>
+						<h2 className="card-user__name">{}</h2>
+						<h3 className="card-user__job">{}</h3>
 					</div>
 				</div>
 
