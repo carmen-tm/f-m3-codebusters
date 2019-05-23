@@ -9,6 +9,7 @@ class MainPage extends React.Component {
       <div className="main-page-wrapper">
         <MainHeader />
         <MainSections
+          defaultProfile = {this.props.defaultProfile}
           data={this.props.data}
           methodInputText={this.props.methodInputText}
           methodColorChange={this.props.methodColorChange}
