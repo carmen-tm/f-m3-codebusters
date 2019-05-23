@@ -78,7 +78,7 @@ class CardGenerator extends React.Component {
 			},
     })
 		.then(function (resp) { buttonShare.disabled = false; return resp.json(); })
-		.then(result => { this.setState({twitter: true, url: result.cardURL}); })
+		.then(result => {this.setState({twitter: true, url: result.cardURL, success: result.success}); })
 		.catch(function (error) { console.log(error); });
 	}
 
