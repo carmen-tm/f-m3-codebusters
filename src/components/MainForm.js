@@ -15,22 +15,25 @@ class MainForm extends React.Component {
 					arrowId="arrow-design"
 					arrow="up"
 				>
-					<PanelColors 
-					methodColorChange={this.props.methodColorChange}
-					checked={this.props.checked}
+					<PanelColors
+						methodColorChange={this.props.methodColorChange}
+						checked={this.props.checked}
 					/>
 				</Fieldset>
 
 				<Fieldset
-          title="Fill"
-          classIcon="far fa-keyboard"
-          btnId="ButtonFill"
-          arrowId="arrow-fillTheGap"
-					arrow="down"  
-					    
-        >
-          <PanelFill methodInputText={this.props.methodInputText} updateAvatar={this.props.updateAvatar}/>
-        </Fieldset>  
+					title="Fill"
+					classIcon="far fa-keyboard"
+					btnId="ButtonFill"
+					arrowId="arrow-fillTheGap"
+					arrow="down"
+				>
+					<PanelFill
+						methodInputText={this.props.methodInputText}
+						profileObject={this.props.profileObject}
+						updateAvatar={this.props.updateAvatar}
+					/>
+				</Fieldset>
 
 				<Fieldset
 					title="Share"
@@ -39,7 +42,7 @@ class MainForm extends React.Component {
 					arrowId="arrow-share"
 					arrow="down"
 				>
-					<PanelShare />
+					<PanelShare btnShare={this.props.btnShare} twitter={this.props.twitter}  urlCard={this.props.urlCard}/>
 				</Fieldset>
 			</form>
 		);
