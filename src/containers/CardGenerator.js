@@ -100,6 +100,7 @@ class CardGenerator extends React.Component {
 			twitter={this.state.twitter}
 			btnShare={this.handlerButtonShare}
 			urlCard={this.state.url}
+			profileObject={this.state.profile}
 			/>
     </div>
 	);

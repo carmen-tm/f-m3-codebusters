@@ -20,6 +20,7 @@ class MainSections extends React.Component{
         twitter={this.props.twitter}
         btnShare={this.props.btnShare}
         urlCard={this.props.urlCard}
+        profileObject={this.props.profileObject}
         />
       </main>
     )
