@@ -54,12 +54,8 @@ class MainPreview extends React.Component {
 
 		return (
 			<section className="main-preview__container">
-				{/* <button className="reset__btn">
-					<i className="far fa-trash-alt reset__icon" />
-					Reset
-				</button> */}
 				<Button
-					className="reset__btn"
+					btnClass="reset__btn"
 					textBtn={
 						<Fragment>
 							<i className="far fa-trash-alt reset__icon" />
