@@ -1,61 +1,73 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Button from './Button';
 
-function changeClassColorTitle(value){
+function changeClassColorTitle(value) {
 	let classCard = 'card-user card__container ';
-	if(parseInt(value) === 1){
+	if (parseInt(value) === 1) {
 		classCard += 'green-palette borderLeftGreen';
-		return classCard
- } else if(parseInt(value)  === 2){
-	 classCard += 'red-palette borderLeftRed';
-	 return classCard
- } else if(parseInt(value)  === 3){
-	 classCard += 'gray-palette borderLeftGray';
-	 return classCard}
+		return classCard;
+	} else if (parseInt(value) === 2) {
+		classCard += 'red-palette borderLeftRed';
+		return classCard;
+	} else if (parseInt(value) === 3) {
+		classCard += 'gray-palette borderLeftGray';
+		return classCard;
+	}
 }
 
-function changeClassColorList(value){
+function changeClassColorList(value) {
 	let classIcons = 'card-sm__container card__container ';
-	if(parseInt(value) === 1){
+	if (parseInt(value) === 1) {
 		classIcons += 'green-palette';
-		return classIcons
- } else if(parseInt(value)  === 2){
-	 classIcons += 'red-palette';
-	 return classIcons
- } else if(parseInt(value)  === 3){
-	 classIcons += 'gray-palette';
-	 return classIcons}
+		return classIcons;
+	} else if (parseInt(value) === 2) {
+		classIcons += 'red-palette';
+		return classIcons;
+	} else if (parseInt(value) === 3) {
+		classIcons += 'gray-palette';
+		return classIcons;
+	}
 }
-
 
 class MainPreview extends React.Component {
-	displayDefaultName(){
-		const {defaultName}=this.props.defaultProfile;
-		const {name}=this.props.data;
-		if (!name){
-			return defaultName
-		}else{
-			return name
+	displayDefaultName() {
+		const { defaultName } = this.props.defaultProfile;
+		const { name } = this.props.data;
+		if (!name) {
+			return defaultName;
+		} else {
+			return name;
 		}
 	}
-	displayDefaultJob(){
-		const {defaultJob}=this.props.defaultProfile;
-		const {job}=this.props.data;
-		if (!job){
-			return defaultJob
-		}else{
-			return job
+	displayDefaultJob() {
+		const { defaultJob } = this.props.defaultProfile;
+		const { job } = this.props.data;
+		if (!job) {
+			return defaultJob;
+		} else {
+			return job;
 		}
 	}
 	render() {
-		const {phone,email,linkedin,github, photo} = this.props.data;
-		const {color} =this.props;
+		const { phone, email, linkedin, github, photo } = this.props.data;
+		const { color, btnClick } = this.props;
 
 		return (
 			<section className="main-preview__container">
-				<button className="reset__btn">
+				{/* <button className="reset__btn">
 					<i className="far fa-trash-alt reset__icon" />
 					Reset
-				</button>
+				</button> */}
+				<Button
+					className="reset__btn"
+					textBtn={
+						<Fragment>
+							<i className="far fa-trash-alt reset__icon" />
+							Reset
+						</Fragment>
+					}
+					btnClick={btnClick}
+				/>
 
 				<div className="card-user__container card__container">
 					<div className={changeClassColorTitle(color)}>
@@ -64,13 +76,16 @@ class MainPreview extends React.Component {
 					</div>
 				</div>
 
-				<div className="card__picture js__profile-image" style={{backgroundImage:`url(${photo})`}}/>
+				<div
+					className="card__picture js__profile-image"
+					style={{ backgroundImage: `url(${photo})` }}
+				/>
 
 				<div className={changeClassColorList(color)}>
 					<ul className="card__social-media-list">
 						<li
 							id="phone-li"
-							className= "card__item-list card-user__phone phone"
+							className="card__item-list card-user__phone phone"
 						>
 							<a id="phone-link" className="card__link-phone" href={phone}>
 								<i className="fas fa-mobile-alt" title="Mobile icon" />
@@ -85,10 +100,10 @@ class MainPreview extends React.Component {
 							</a>
 						</li>
 						<li id="linkedin-li" className="card__item-list linkedin">
-							<a 
-								className="card__link-linkedin" 
+							<a
+								className="card__link-linkedin"
 								href={`https://www.linkedin.com/in/${linkedin}`}
-								target="_blank" 
+								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<i className="fab fa-linkedin-in" title="Linkedin icon" />
