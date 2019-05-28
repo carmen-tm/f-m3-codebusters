@@ -35,7 +35,7 @@ class PanelFill extends React.Component {
 				/>
 
 				<GetAvatar
-					divClassName="fillTheGap-label profilePicture-align"
+					divClassName="fillTheGap-item profilePicture-align"
 					labelClassName="fillTheGap-label"
 					labelFor="profilePicture"
 					labelInnerText="Profile picture"

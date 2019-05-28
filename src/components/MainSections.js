@@ -1,15 +1,16 @@
-import React from "react";
-import MainPreview from "./MainPreview";
-import MainForm from "./MainForm";
+import React from 'react';
+import MainPreview from './MainPreview';
+import MainForm from './MainForm';
 
 class MainSections extends React.Component {
 	render() {
 		return (
-			<main className='main-sections__container'>
+			<main className="main-sections__container">
 				<MainPreview
 					defaultProfile={this.props.defaultProfile}
 					data={this.props.data}
 					color={this.props.color}
+					btnClick={this.props.btnClick}
 				/>
 				<MainForm
 					methodInputText={this.props.methodInputText}
