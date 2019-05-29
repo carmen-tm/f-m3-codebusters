@@ -23,6 +23,7 @@ class MainPage extends React.Component {
           profileObject={this.props.profileObject}
           onClickCollapsible={this.props.onClickCollapsible}
           currentIdState={this.props.currentIdState}
+          btnClick={this.props.btnClick}
         />
         <MainFooter />
       </div>

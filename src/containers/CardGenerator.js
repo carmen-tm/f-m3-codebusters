@@ -33,6 +33,7 @@ class CardGenerator extends React.Component {
     this.handlerButtonShare = this.handlerButtonShare.bind(this);
     this.storeinLocalStorage = this.storeinLocalStorage.bind(this);
     this.handleCollapsible = this.handleCollapsible.bind(this);
+    this.btnClick = this.btnClick.bind(this);
   }
 
   storeinLocalStorage() {
@@ -120,6 +121,22 @@ class CardGenerator extends React.Component {
         console.log(error);
       });
   }
+	btnClick(e) {
+		localStorage.removeItem('filledForm');
+		this.setState({
+			profile: {
+				name: '',
+				job: '',
+				palette: 1,
+				phone: '',
+				email: '',
+				linkedin: '',
+				github: '',
+				photo: defaultImage,
+				miniature: ''
+			}
+		});
+	}
 
   handlerButtonShare(event) {
     const buttonShare = event.currentTarget;
@@ -144,6 +161,7 @@ class CardGenerator extends React.Component {
           profileObject={this.state.profile}
           onClickCollapsible={this.handleCollapsible}
           currentIdState={this.state.currentId}
+          btnClick={this.btnClick}
         />
       </div>
     );
