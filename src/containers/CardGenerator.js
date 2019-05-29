@@ -72,8 +72,6 @@ class CardGenerator extends React.Component {
     });
   }
 
-  //El prevState lo necesitas cuando consultas el estado anterior y lo niegas
-
   updateAvatar(image) {
     const { profile } = this.state;
     this.setState(prevState => {
