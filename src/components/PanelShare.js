@@ -9,7 +9,7 @@ class PanelShare extends React.Component {
     console.log(shareTwitterLink);
     return (
       <section
-        className={`section-share close ${
+        className={`section-share ${
           this.props.currentIdState === this.props.id ? "" : "hidden"
         }`}
         id={this.props.title}

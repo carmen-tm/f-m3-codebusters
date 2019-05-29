@@ -55,21 +55,7 @@ class CardGenerator extends React.Component {
     });
   }
 
-  handleCollapsible(event) {
-    const newCid = event.currentTarget.getAttribute("data-id");
-
-    this.setState(prevState => {
-      if (newCid === prevState.cid) {
-        return {
-          cid: null
-        };
-      } else {
-        return {
-          cid: newCid
-        };
-      }
-    });
-  }
+ 
 
   handleCollapsible(event) {
     const newCurrentId = event.currentTarget.getAttribute("data-id");

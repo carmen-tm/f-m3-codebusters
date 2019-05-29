@@ -5,7 +5,7 @@ class PanelColors extends React.Component {
     const methodColorChange = this.props.methodColorChange;
     return (
       <section
-        className={`design panel close ${
+        className={`design panel ${
           this.props.currentIdState === this.props.id ? "" : "hidden"
         }`}
         id={this.props.title}

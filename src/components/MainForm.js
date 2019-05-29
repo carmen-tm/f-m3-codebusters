@@ -13,7 +13,7 @@ class MainForm extends React.Component {
           classIcon="far fa-object-ungroup"
           btnId="ButtonDesign"
           arrowId="arrow-design"
-          arrow="up"
+          arrow={this.props.currentIdState ==='Design'? 'up' : 'down'}
           onClickCollapsible={this.props.onClickCollapsible}
         >
           <PanelColors
@@ -30,7 +30,7 @@ class MainForm extends React.Component {
           classIcon="far fa-keyboard"
           btnId="ButtonFill"
           arrowId="arrow-fillTheGap"
-          arrow="down"
+          arrow={this.props.currentIdState ==='Fill'? 'up' : 'down'}
           onClickCollapsible={this.props.onClickCollapsible}
         >
           <PanelFill
@@ -48,7 +48,7 @@ class MainForm extends React.Component {
           classIcon="fas fa-share-alt"
           btnId="ButtonShare"
           arrowId="arrow-share"
-          arrow="down"
+          arrow={this.props.currentIdState ==='Share'? 'up' : 'down'}
           onClickCollapsible={this.props.onClickCollapsible}
         >
           <PanelShare
