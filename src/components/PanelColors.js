@@ -4,8 +4,18 @@ class PanelColors extends React.Component {
 	render() {
         const methodColorChange = this.props.methodColorChange;
 		return (
-			<section id="section-design" className="design panel">
+
+
+
+
+			<section id="section-design" className="design panel close">
+
+
+
+
 				<p className="section__title">Colors</p>
+
+
 				<div className="options__container">
 					<div className="option__container">
 						<label htmlFor="palette--blue-green" />

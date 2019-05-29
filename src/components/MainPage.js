@@ -21,6 +21,8 @@ class MainPage extends React.Component {
           btnShare={this.props.btnShare}
           urlCard={this.props.urlCard}
           profileObject={this.props.profileObject}
+          onClickCollapsible={this.props.onClickCollapsible}
+          isVisible={this.props.isVisible}
         />
         <MainFooter />
       </div>

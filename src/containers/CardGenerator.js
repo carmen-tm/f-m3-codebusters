@@ -12,6 +12,7 @@ class CardGenerator extends React.Component {
 				defaultName: 'User name',
 				defaultJob: 'User job'
 			},
+			isVisible: false,                           
 			profile: JSON.parse(localStorage.getItem('filledForm'))|| {
 					name: '',
 					job: '',
@@ -31,6 +32,7 @@ class CardGenerator extends React.Component {
 		this.sendRequest = this.sendRequest.bind(this);
 		this.handlerButtonShare = this.handlerButtonShare.bind(this);
 		this.storeinLocalStorage = this.storeinLocalStorage.bind(this);
+		this.handleCollapsible = this.handleCollapsible.bind(this);
 	}
 
 	storeinLocalStorage(){
@@ -52,6 +54,15 @@ class CardGenerator extends React.Component {
 			};
 		});
 	}
+
+	handleCollapsible(){
+		this.setState (prevState => {
+			return {
+				isVisible: !prevState.isVisible
+			}
+		})
+	}
+	//El prevState lo necesitas cuando consultas el estado anterior y lo niegas
 
 	updateAvatar(image) {
 		const { profile } = this.state;
@@ -112,6 +123,8 @@ class CardGenerator extends React.Component {
 			btnShare={this.handlerButtonShare}
 			urlCard={this.state.url}
 			profileObject={this.state.profile}
+			onClickCollapsible={this.handleCollapsible}
+			isVisible={this.state.isVisible}
 			/>
     </div>
 	);

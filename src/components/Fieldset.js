@@ -13,6 +13,8 @@ class Fieldset extends React.Component {
 					btnId={btnId}
 					arrowId={arrowId}
 					arrow={arrow}
+					onClickCollapsible={this.props.onClickCollapsible}
+					
 				/>
 				<Panel>
 				{children}

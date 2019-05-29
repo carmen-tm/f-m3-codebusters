@@ -5,7 +5,9 @@ import GetAvatar from './GetAvatar';
 class PanelFill extends React.Component {
 	render() {
 		return (
-			<section className="fillTheGap">
+
+			<section className={`fillTheGap ${this.props.isVisible === true ? '' : 'hidden'}`} >
+
 				<Input
 					divClassName="fillTheGap-item"
 					labelClassName="fillTheGap-label"

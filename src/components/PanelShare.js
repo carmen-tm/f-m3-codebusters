@@ -8,7 +8,13 @@ class PanelShare extends React.Component {
       urlCard;
     console.log (shareTwitterLink);
     return (
-      <section id="section-share" className="section-share">
+
+
+      <section id="section-share" className="section-share close">
+
+
+
+
         <button type="button" className="btn btn-share" onClick={btnShare}>
           <i className="far fa-address-card icon-btn" /> Create your card
         </button>
