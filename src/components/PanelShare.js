@@ -17,7 +17,9 @@ class PanelShare extends React.Component {
         <button type="button" className="btn btn-share" onClick={btnShare}>
           <i className="far fa-address-card icon-btn" /> Create your card
         </button>
-        <p className="response">{success ? urlCard : messageError}</p>
+        <a href={urlCard} target="_blank" rel="noopener noreferrer">
+          <p className="response">{success ? urlCard : messageError}</p>
+        </a>
         <a
           href={shareTwitterLink}
           className={
