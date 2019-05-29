@@ -1,20 +1,19 @@
-import React from 'react';
+import React from "react";
 
 class PanelShare extends React.Component {
-  render () {
-    const {btnShare, urlCard, messageError, success} = this.props;
+  render() {
+    const { btnShare, urlCard, messageError, success } = this.props;
     const shareTwitterLink =
-      'https://twitter.com/intent/tweet?text=My awesome profile card: ' +
+      "https://twitter.com/intent/tweet?text=My awesome profile card: " +
       urlCard;
-    console.log (shareTwitterLink);
+    console.log(shareTwitterLink);
     return (
-
-
-      <section id="section-share" className="section-share close">
-
-
-
-
+      <section
+        className={`section-share close ${
+          this.props.currentIdState === this.props.id ? "" : "hidden"
+        }`}
+        id={this.props.title}
+      >
         <button type="button" className="btn btn-share" onClick={btnShare}>
           <i className="far fa-address-card icon-btn" /> Create your card
         </button>
@@ -23,8 +22,8 @@ class PanelShare extends React.Component {
           href={shareTwitterLink}
           className={
             success
-              ? 'twitter__link btn-twitter'
-              : 'twitter__link btn-twitter hidden'
+              ? "twitter__link btn-twitter"
+              : "twitter__link btn-twitter hidden"
           }
           target="_blank"
           rel="noopener noreferrer"

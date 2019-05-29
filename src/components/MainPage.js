@@ -1,7 +1,7 @@
-import React from 'react';
-import MainSections from './MainSections';
-import MainHeader from './MainHeader';
-import MainFooter from './MainFooter';
+import React from "react";
+import MainSections from "./MainSections";
+import MainHeader from "./MainHeader";
+import MainFooter from "./MainFooter";
 
 class MainPage extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class MainPage extends React.Component {
       <div className="main-page-wrapper">
         <MainHeader />
         <MainSections
-          defaultProfile = {this.props.defaultProfile}
+          defaultProfile={this.props.defaultProfile}
           data={this.props.data}
           methodInputText={this.props.methodInputText}
           methodColorChange={this.props.methodColorChange}
@@ -22,7 +22,7 @@ class MainPage extends React.Component {
           urlCard={this.props.urlCard}
           profileObject={this.props.profileObject}
           onClickCollapsible={this.props.onClickCollapsible}
-          isVisible={this.props.isVisible}
+          currentIdState={this.props.currentIdState}
         />
         <MainFooter />
       </div>
